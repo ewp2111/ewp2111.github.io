@@ -6,9 +6,10 @@ function setup() {
 
 function draw() {
   background(100);
-  stroke(255);
+  stroke(216, 163, 163);
   strokeWeight(1);
   line(50, 0, 50, 1000);
+  noStroke();
   textSize(20);
   fill(255);
   textFont('Futura PT');
