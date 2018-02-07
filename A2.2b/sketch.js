@@ -9,16 +9,16 @@ function preload() {
 
 function setup() {
   createCanvas(5000, 5000);
-  frameRate(100);
+  frameRate(10);
 }
 
 function draw() {
   var s = second();
   var s1 = map(second(),0,60,0,800);
   noStroke();
-  fill(0);
-  ellipse(s1+100,100,200,200);
-
+  fill(255);
+  ellipse(s1+100,100,300,300);
+  image(sun,s1,0, 200,200);
 
 
   var t1 = map(s,0,30,0,255);
