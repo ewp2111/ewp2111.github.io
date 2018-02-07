@@ -44,8 +44,8 @@ function draw() {
   var hr = -100; 
   for (var i = 0; i < hour(); i++) {
     push();
-    scale(0.5,0.5);
-    translate(hr,100);
+    scale(0.3,0.3);
+    translate(hr,150);
     drawHeart();
     hr += 150;
     pop();
