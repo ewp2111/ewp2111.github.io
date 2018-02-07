@@ -55,23 +55,25 @@ function draw() {
   var s = second();
   var t1 = map(s,0,30,0,255);
   var t2 = map(s,30,60,0,255);
+  push();
   if (s>30){
   fill(255);
   noStroke();
-  rect(50,200,300,300);
+  rect(50,200,350,350);
   tint (255,t2);
-  image(i3,50,200,300,300);
+  image(i3,50,200,350,350);
   tint (255,255-t2);
-  image (i2,50,200,300,300);
+  image (i2,50,200,350,350);
   } else {
   fill(255);
   noStroke();
-  rect(10,200,300,300);
+  rect(10,200,350,350);
   tint(255,255-t1);
-  image(i1,50,200,300,300);
+  image(i1,50,200,350,350);
   tint(255,t1);
-  image(i2,50,200,300,300)
-  }
+  image(i2,50,200,350,350)
+  }:
+  pop()
 
 }
 
