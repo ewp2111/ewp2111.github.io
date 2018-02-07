@@ -9,7 +9,7 @@ function preload() {
 
 function setup() {
   createCanvas(5000, 5000);
-  frameRate(10);
+  frameRate(1);
 }
 
 function draw() {
@@ -26,19 +26,19 @@ function draw() {
   if (s>30){
   fill(255);
   noStroke();
-  rect(10,200,200,200);
+  rect(50,400,400,400);
   tint (255,t2);
-  image(i3,10,200,200,200);
+  image(i3,50,400,400,400);
   tint (255,255-t2);
-  image (i2,10,200,200,200);
+  image (i2,50,400,400,400);
   } else {
   fill(255);
   noStroke();
-  rect(10,200,200,200);
+  rect(10,400,400,400);
   tint(255,255-t1);
-  image(i1,10,200,200,200);
+  image(i1,50,400,400,400);
   tint(255,t1);
-  image(i2,10,200,200,200)
+  image(i2,50,400,400,400)
   }
 }
 
