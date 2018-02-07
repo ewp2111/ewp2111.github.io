@@ -35,7 +35,7 @@ function draw() {
     drawFace();
     min += 50;
     pop();
-  }
+  };
 
   var hr = -100; 
   for (var i = 0; i < hour(); i++) {
@@ -45,7 +45,7 @@ function draw() {
     drawHeart();
     hr += 150;
     pop();
-  }
+  };
 
 
   var s = second();
@@ -69,7 +69,7 @@ function draw() {
   tint(255,t1);
   image(i2,50,200,350,350)
   }:
-  pop()
+  pop();
 
 }
 
