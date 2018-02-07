@@ -1,12 +1,5 @@
 
 
-function preload() {
-  i1= loadImage('i1.png');
-  i2= loadImage('i2.png');
-  i3= loadImage('i3.png');
-
-}
-
 function setup() {
   createCanvas(1200, 700);
 }
@@ -71,6 +64,7 @@ function draw() {
   tint(255,t1);
   image(i2,50,200,400,400)
   }
+}
 
 }
 
