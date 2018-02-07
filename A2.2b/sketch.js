@@ -8,7 +8,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(5000, 5000);
+  createCanvas(3000, 3000);
   frameRate(1);
 }
 
@@ -17,8 +17,8 @@ function draw() {
   var s1 = map(second(),0,60,0,800);
   noStroke();
   fill(255);
-  ellipse(s1+100,100,300,300);
-  image(sun,s1,0, 200,200);
+  ellipse(s1+100,100,400,400);
+  image(sun,s1,0, 300,300);
 
 
   var t1 = map(s,0,30,0,255);
@@ -26,19 +26,19 @@ function draw() {
   if (s>30){
   fill(255);
   noStroke();
-  rect(50,400,400,400);
+  rect(50,200,400,400);
   tint (255,t2);
-  image(i3,50,400,400,400);
+  image(i3,50,200,400,400);
   tint (255,255-t2);
-  image (i2,50,400,400,400);
+  image (i2,50,200,400,400);
   } else {
   fill(255);
   noStroke();
-  rect(10,400,400,400);
+  rect(10,200,400,400);
   tint(255,255-t1);
-  image(i1,50,400,400,400);
+  image(i1,50,200,400,400);
   tint(255,t1);
-  image(i2,50,400,400,400)
+  image(i2,50,200,400,400)
   }
 }
 
