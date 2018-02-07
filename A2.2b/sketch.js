@@ -1,5 +1,3 @@
-
-
 function preload() {
   i1= loadImage('i1.png');
   i2= loadImage('i2.png');
@@ -13,6 +11,7 @@ function setup() {
 
 
 function draw() {
+  push();
   var sun=map(second(),0,60,0,800);
   fill(255);
   noStroke();
@@ -28,6 +27,7 @@ function draw() {
   stroke(150);
   strokeWeight(2);
   arc(sun,120,20,20,10,170);
+  pop();
 
   var min = -100; 
   for (var i = 0; i < minute(); i++) {
@@ -99,9 +99,3 @@ function drawFace() {
   angleMode(DEGREES);
   arc(210,2040,30,40,180,360)
 }
-
-
-
-
-
-
