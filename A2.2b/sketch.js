@@ -8,7 +8,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1200, 700);
+  createCanvas(1200, 1000);
 }
 
 
@@ -77,14 +77,14 @@ function draw() {
 function drawHeart(){
   noStroke();
   fill(205,50,50);
-  ellipse(200, 1000, 50, 50); 
-  ellipse(240, 1000, 50, 50); 
-  triangle(176,1008,264,1008,220,1060);
+  ellipse(200, 1300, 50, 50); 
+  ellipse(240, 1300, 50, 50); 
+  triangle(176,1308,264,1308,220,1360);
   stroke(255);
   strokeWeight(5);
-  line(220,980,230,1008);
-  line(230,1008,210,1020);
-  line(210,1020,220,1060);
+  line(220,1280,230,1008);
+  line(230,1308,210,1020);
+  line(210,1320,220,1060);
 
 }
 
@@ -92,11 +92,11 @@ function drawHeart(){
 function drawFace() {
   noStroke();
   fill(100);
-  ellipse(200, 1500, 8, 8); 
-  ellipse(220, 1500, 8, 8); 
+  ellipse(200, 2000, 8, 8); 
+  ellipse(220, 2000, 8, 8); 
   fill(100);
   angleMode(DEGREES);
-  arc(210,1540,30,40,180,360)
+  arc(210,2040,30,40,180,360)
 }
 
 
