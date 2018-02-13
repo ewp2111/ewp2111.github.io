@@ -33,12 +33,17 @@ function draw() {
 
   for (var i = 0; i < headlines.length; i++) {
     var words = split(headlines[i], '');
-
     var nextX = 0;
 
-//draw sign to circles
+    //draw sign to circles
 
     for (var j = 0; j < words.length; j++) {
+
+
+      var str1 = 'abcdefghijklmnopqrstuvwxyz';
+      var str2 = split(str1, '');
+      var size = (str2.indexOf(words[j])+1);
+
       if (sign.includes(words[j].toLowerCase())) {
         noStroke();
         fill(0,0,255,100);
@@ -47,33 +52,20 @@ function draw() {
         noStroke();
         fill(0,0,255,50);
         ellipse(nextX,i*lineheight,20,20);
+      } else if (str2.includes(words[j].toLowerCase())){
+        noStroke();
+        fill(255,0,0,10);
+        ellipse(nextX,i*lineheight,size*3,size*3);
       } else {
         fill(0);
       };
-//draw alphabets
+    };
 
-//setup a to z sizes
 
-for (var k = 0; k < words.length; k++) {
-  var str1 = 'abcdefghijklmnopqrstuvwxyz';
-  var str2 = split(str1, '');
-  
-  var size = (str2.indexOf(words[k])+1);
-
-  if (str2.includes(workds[j].toLowerCase())){
-  noStroke();
-  fill(255,0,0,100);
-  ellipse(100,100,size*100,size*100)
+    //text
+    text(words[j]+' ', nextX, i*lineheight);
+    nextX += textWidth(words[j]+' ');
   }
-
-};
-
-//text
-      text(words[j]+' ', nextX, i*lineheight);
-      nextX += textWidth(words[j]+' ');
-    }
-  }
-
 
 }
 
