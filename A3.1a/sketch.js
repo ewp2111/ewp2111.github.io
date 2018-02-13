@@ -59,8 +59,13 @@ for (var k = 0; k < words.length; k++) {
   var str2 = split(str1, '');
   
   var size = (str2.indexOf(words[k])+1);
+
+  if (str2.includes(workds[j].toLowerCase())){
+  noStroke();
   fill(255,0,0,100);
   ellipse(100,100,size*100,size*100)
+  }
+
 };
 
 //text
