@@ -41,16 +41,27 @@ function draw() {
     for (var j = 0; j < words.length; j++) {
       if (sign.includes(words[j].toLowerCase())) {
         noStroke();
-        fill(255,0,0,100);
+        fill(0,0,255,100);
         ellipse(nextX,i*lineheight,50,50);
       } else if (punc.includes(words[j])){
         noStroke();
-        fill(255,0,0,50);
+        fill(0,0,255,50);
         ellipse(nextX,i*lineheight,20,20);
       } else {
         fill(0);
       };
 //draw alphabets
+
+//setup a to z sizes
+
+for (var k = 0; k < words.length; k++) {
+  var str1 = 'abcdefghijklmnopqrstuvwxyz';
+  var str2 = split(str1, '');
+  
+  var size = (str2.indexOf(words[k])+1);
+  fill(255,0,0,100);
+  ellipse(100,100,size*100,size*100)
+};
 
 //text
       text(words[j]+' ', nextX, i*lineheight);
