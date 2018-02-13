@@ -17,7 +17,7 @@ function setup() {
   createCanvas(2000, 2000);
   background(255);
 
-  textSize(14);
+  textSize(10);
   textAlign(LEFT);
 
   noLoop(); 
@@ -27,45 +27,66 @@ function setup() {
 
 function draw() {
 
-  var lineheight = 24;
-  var margin = 40;
+  var lineheight = 30;
+  var margin = 30;
   translate(margin, margin);
 
   for (var i = 0; i < headlines.length; i++) {
     var words = split(headlines[i], '');
+
     var nextX = 0;
 
-    //draw sign to circles
+      var rectheight = 2;
+
+
+//draw sign to circles
+
 
     for (var j = 0; j < words.length; j++) {
+      stroke(222);
+      strokeWeight(0.1);
+      line(0,i*lineheight, nextX, i*lineheight);
 
+      //text
+      noFill();
+      noStroke();
+      text(words[j]+' ', nextX, i*lineheight);
+      nextX += textWidth(words[j]+'  ');
+    
 
+      //define size of alphabets
       var str1 = 'abcdefghijklmnopqrstuvwxyz';
       var str2 = split(str1, '');
       var size = (str2.indexOf(words[j])+1);
 
+      //define size of numbers
+      var str3 = '0123456789';
+      var str4 = split(str3, '');
+      var sizen = (str4.indexOf(words[j])+1);
+
+
+
+      //signs 
       if (sign.includes(words[j].toLowerCase())) {
         noStroke();
-        fill(0,0,255,100);
+        fill(51,204,204,50);
         ellipse(nextX,i*lineheight,50,50);
+        //punc
       } else if (punc.includes(words[j])){
         noStroke();
-        fill(0,0,255,50);
+        fill(51,204,204,50);
         ellipse(nextX,i*lineheight,20,20);
+        //alphabets
       } else if (str2.includes(words[j].toLowerCase())){
         noStroke();
-        fill(255,0,0,10);
-        ellipse(nextX,i*lineheight,size*3,size*3);
-      } else {
-        fill(0);
+        fill(255,153,51,50);
+        ellipse(nextX,i*lineheight,size,size);
+
       };
-    };
-
-
-    //text
-    text(words[j]+' ', nextX, i*lineheight);
-    nextX += textWidth(words[j]+' ');
+      
+    }
   }
+
 
 }
 
@@ -80,6 +101,7 @@ function extractHeadlines() {
     var h = nytResponse.results[i].title;
     // besides .title, other text data available to you include:
     // .abstract, .byline, .section, etc. etc.
+
     append(headlines, h);
   }
 

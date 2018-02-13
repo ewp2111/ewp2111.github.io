@@ -2,16 +2,14 @@
 // length of story headlines.
 // ---
 
-var myFont;
 var headlines = [];
 var maxHeadLen, minHeadLen;
 
 function preload() {
-  myFont = loadFont('SourceCodePro-Regular.ttf');
 
   // Assemble url for API call
   var url = "https://api.nytimes.com/svc/topstories/v2/home.json";
-  var apikey = "436e4c0731324a5faa7741a58ba6adec"; // see: https://developer.nytimes.com
+  var apikey = "5048c9901c224a338bb10cf3b8f0b2b3"; // see: https://developer.nytimes.com
   url += "?api-key=" + apikey;
 
   nytResponse = loadJSON(url);
@@ -24,7 +22,6 @@ function setup() {
   background(0);
 
   textSize(7);
-  textFont(myFont);
   textAlign(LEFT);
 
   noLoop(); // since we're not animating, one frame is sufficient: run draw() just once
@@ -40,14 +37,14 @@ function draw() {
   translate(margin, margin);
 
   var lineheight = 15;
-  var rectheight = 8;
+  var rectheight = 2;
 
   for (var i = 0; i < headlines.length; i++) {
 
     // draw rectangle
     fill(120);
     var rectwidth = map(headlines[i].length,minHeadLen, maxHeadLen, margin, width-margin*2);
-    rect(0, i*lineheight, rectwidth, -1*rectheight)
+    rect(0, i*lineheight, rectwidth, -1*rectheight);
 
     // draw headline
     fill(255);
