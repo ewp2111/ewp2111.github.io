@@ -28,8 +28,6 @@ function setup() {
 
 function draw() {
 
-line(mouseX,0,mouseX,100);
-
 
   var lineheight = 30;
   var margin = 30;
@@ -52,7 +50,10 @@ line(mouseX,0,mouseX,100);
       line(0,i*lineheight, nextX, i*lineheight);
 
       //text
+      if (mouseIsPressed){
       noFill();
+      } else {
+      fill(100)};
       noStroke();
       text(words[j]+' ', nextX, i*lineheight);
       nextX += textWidth(words[j]+'  ');
