@@ -3,6 +3,7 @@ var sign = [
 "?", "!"];
 var punc = [
 ".", ","];
+var abstracts = [];
 
 function preload() {
 
@@ -26,6 +27,9 @@ function setup() {
 }
 
 function draw() {
+
+line(mouseX,0,mouseX,100);
+
 
   var lineheight = 30;
   var margin = 30;
@@ -85,7 +89,7 @@ function draw() {
       };
       
     }
-  }
+  };
 
 
 }
@@ -103,6 +107,10 @@ function extractHeadlines() {
     // .abstract, .byline, .section, etc. etc.
 
     append(headlines, h);
+
+
+    append(abstracts, nytResponse.results[i].abstract);
+
   }
 
   // console.log(headlines); // make sure counted data looks as expected
