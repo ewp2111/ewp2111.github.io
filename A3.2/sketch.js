@@ -21,7 +21,6 @@ function setup() {
   textSize(10);
   textAlign(LEFT);
 
-  noLoop(); 
 
   extractHeadlines();
 }
@@ -41,7 +40,7 @@ function draw() {
       var rectheight = 2;
 
 
-//draw sign to circles
+      //draw sign to circles
 
 
     for (var j = 0; j < words.length; j++) {
@@ -50,13 +49,11 @@ function draw() {
       line(0,i*lineheight, nextX, i*lineheight);
 
       //text
-      if (mouseIsPressed){
       noFill();
-      } else {
-      fill(100)};
       noStroke();
       text(words[j]+' ', nextX, i*lineheight);
       nextX += textWidth(words[j]+'  ');
+
     
 
       //define size of alphabets
@@ -86,16 +83,48 @@ function draw() {
         noStroke();
         fill(255,153,51,50);
         ellipse(nextX,i*lineheight,size,size);
-
-      };
-      
-    }
+      }
+    };
   };
+  noLoop();
+  for (var i = 0; i < headlines.length; i++) {
+     var words = split(headlines[i], '');
+     var nextX = 0;
+     var rectheight = 2;
+
+
+    for (var j = 0; j < words.length; j++) {
+      stroke(222);
+      strokeWeight(0.1);
+      line(0,i*lineheight, nextX, i*lineheight);
+
+      //text
+      if (mouseIsPressed){
+      noStroke();
+      text(words[j]+' ', nextX, i*lineheight);
+      nextX += textWidth(words[j]+'  ');
+        fill(150);
+      } else {
+      noFill()
+      }
+    
+    }
+  }
+}
+
+function mousePressed(){
+  fill(255);
+  rect(-30,-30,2000,2000);
+  redraw();
 
 
 }
 
-
+function mouseReleased(){
+  fill(255);
+  rect(-30,-30,2000,2000);
+  redraw();
+}
 
 
 function extractHeadlines() {
