@@ -114,19 +114,6 @@ function draw() {
   }
 }
 
-function mousePressed(){
-  fill(255);
-  rect(-30,-30,2000,2000);
-  redraw();
-}
-
-function mouseReleased(){
-  fill(255);
-  rect(-30,-30,2000,2000);
-  redraw();
-}
-
-
 function extractHeadlines() {
 
   // console.log(nytResponse); // take a look at the full API response structure
