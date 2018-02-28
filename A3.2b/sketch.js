@@ -36,7 +36,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1300, 2000);
+  createCanvas(1100, 2000);
   background(255);
   frameRate(30);
 
@@ -79,6 +79,7 @@ function draw() {
     nextX += textWidth(words[j]+'  ');
     } else {
     noFill();
+    noStroke();
     text(words[j]+' ', nextX, i*lineheight);
     nextX += textWidth(words[j]+'  ');
     
