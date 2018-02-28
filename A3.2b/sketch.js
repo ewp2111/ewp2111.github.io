@@ -2,6 +2,12 @@
 var headlines = [];
 var maxHeadLen, minHeadLen;
 var section = [];
+var headlines = [];
+var sign = [
+"?", "!"];
+var punc = [
+".", ","];
+
 
 function preload() {
   i1 = loadImage('world.png');
@@ -30,11 +36,11 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1000, 2000);
+  createCanvas(1300, 2000);
   background(255);
   frameRate(30);
 
-  textSize(10);
+  textSize(15);
   textAlign(LEFT);
 
   extractHeadlines();
@@ -53,6 +59,63 @@ function draw() {
   for (var i = 0; i < headlines.length; i++) {
     var words = split(headlines[i], '');
     var nextX = 0;
+
+
+
+//draw sign to circles
+
+
+    for (var j = 0; j < words.length; j++) {
+      stroke(222);
+      strokeWeight(0.1);
+      line(0,i*lineheight, nextX, i*lineheight);
+
+
+
+      //text
+    if (mouseIsPressed){
+    fill(180);
+    text(words[j]+' ', nextX, i*lineheight);
+    nextX += textWidth(words[j]+'  ');
+    } else {
+    noFill();
+    text(words[j]+' ', nextX, i*lineheight);
+    nextX += textWidth(words[j]+'  ');
+    
+    }
+    
+
+      //define size of alphabets
+      var str1 = 'abcdefghijklmnopqrstuvwxyz';
+      var str2 = split(str1, '');
+      var size = (str2.indexOf(words[j])+1);
+
+      //define size of numbers
+      var str3 = '0123456789';
+      var str4 = split(str3, '');
+      var sizen = (str4.indexOf(words[j])+1);
+
+
+
+      //signs 
+      if (sign.includes(words[j].toLowerCase())) {
+        noStroke();
+        fill(51,204,204,50);
+        ellipse(nextX,i*lineheight,50,50);
+        //punc
+      } else if (punc.includes(words[j])){
+        noStroke();
+        fill(51,204,204,50);
+        ellipse(nextX,i*lineheight,20,20);
+        //alphabets
+      } else if (str2.includes(words[j].toLowerCase())){
+        noStroke();
+        fill(255,153,51,50);
+        ellipse(nextX,i*lineheight,size,size);
+
+      };
+      
+    }
     // draw rectangle
     // on mouseover rectangle, make it brighter
     var rectwidth = map(headlines[i].length,minHeadLen, maxHeadLen, margin, width-margin*2);
@@ -60,22 +123,15 @@ function draw() {
     noStroke();
     rect(0, i*lineheight, rectwidth, -1*rectheight)
 
-    // draw headline
-    if (mouseIsPressed){
-    fill(255,153,51,200);
-    textSize(15);
-    text(headlines[i], 0, i*lineheight);
-    }
   }
 
-  // use a separate loop so it draws on top of everything else
+  // sections
   for (var i = 0; i < headlines.length; i++) {
     var rectwidth = map(headlines[i].length,minHeadLen, maxHeadLen, margin, width-margin*2);
 
     // show section on mouseover
     if (mouseX > margin && mouseX < margin+rectwidth && mouseY < margin+i*lineheight && mouseY > margin+i*lineheight+(-15*rectheight)) {
       fill(51,204,204);
-      textSize(20);
       text(section[i], mouseX+50, mouseY, 200-5, 50-5);
       if ("world".includes(section[i].toLowerCase())){
       image(i1,mouseX-20,mouseY-20,50,50);
