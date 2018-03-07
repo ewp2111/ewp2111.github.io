@@ -10,9 +10,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(2000, 1200);
+  createCanvas(2000, 1300);
   background(255);
-  frameCount
+  frameRate(30);
 }
 
 function draw() {
@@ -33,12 +33,13 @@ function draw() {
   var typeS = table.getColumn('OwnerTypeS');
 
   fill(100);
-  textAlign(CENTER);
+  textAlign(LEFT);
   textFont(Aller_Rg);
   textSize(25);
-  text('CLEANED VACANT LOTS IN NEW YORK CITY',1000,50);
+  text('CLEANED VACANT LOTS IN NEW YORK CITY',250,50);
   textFont(Aller_Lt);
   textSize(20);
+ textAlign(CENTER);
   text('Bronx',130,200);
   text('Brooklyn',130,500);
   text('Manhattan',130,700);
@@ -64,11 +65,11 @@ function draw() {
         rect(250,j*25+60,20,20);
         translate(25,0);
         var b1 = districtB.lastIndexOf(uniqueB[j])+1;
-        //console.log(b1);
         }
       };
     pop();
   };
+
   //Brooklyn
   var uniqueBR = districtBR.unique();
   //remove last index
@@ -126,6 +127,7 @@ function draw() {
         rect(250,j*25+780,20,20);
         translate(25,0);
         var b1 = districtQ.lastIndexOf(uniqueQ[j])+1;
+
         }
       };
     pop();
@@ -149,10 +151,24 @@ function draw() {
         }
       };
     pop();
+  };
 
-} 
+  for (var i = 0; i < uniqueQ.length; i++) {
+    for (var j = 0; j < boroughQ.length; j++) {
+      if (mouseX > (250+(j*25)) && 
+        mouseX < (250+((j+1)*20)) && 
+        mouseY > (780+i*25)&&
+        mouseY < ((i+1)*25+780)
+        ){
+        noStroke();
+        fill(0);
+        text("District " + districtQ[i], 500,500);
+      }
+    }
+  };
 
 }
+
 function extractData() {
   var borough = table.getColumn("Borough");
   var district = table.getColumn("District");
@@ -178,3 +194,5 @@ Array.prototype.unique = function() {
     }
     return arr; 
 }
+
+
