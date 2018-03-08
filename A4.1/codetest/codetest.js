@@ -67,8 +67,10 @@ function setup() {
   createCanvas(ww, hh);
   translate(width / 2, height / 2);
   imageMode(CENTER);
+  push();
   tint(255,105);
   image(mapimg, 0, 0);
+  pop();
 
 
   var cx = mercX(clon);
@@ -230,6 +232,7 @@ function draw(){
   fill(255);
   rect(800,0,1000,1000);
 
+
   fill(100);
   textAlign(LEFT);
   textFont(Aller_Rg);
@@ -237,12 +240,25 @@ function draw(){
   text('CLEANED VACANT LOTS IN NEW YORK CITY',850,50);
   textFont(Aller_Lt);
   textSize(10);
- textAlign(CENTER);
-  text('Bronx',850,160);
-  text('Brooklyn',850,350);
-  text('Manhattan',850,500);
-  text('Queens',850,620);
-  text('Staten Island',850,745);
+ textAlign(LEFT);
+  text('Bronx',900,75);
+  text('Brooklyn',900,252);
+  text('Manhattan',900,442);
+  text('Queens',900,512);
+  text('Staten Island',900,645);
+  //legend
+ fill(114,150,183);
+ rect(680,100,10,10);
+ fill (196,218,241);
+ rect(680,120,10,10);
+ fill(255);
+ textSize(13);
+text('Lot Ownership',680,90);
+textSize(10);
+text('City-owned',700,110);
+text('Private',700,130);
+strokeWeight(1);
+rect(680,92,80,1);
   console.log(districtB);
   //unique values of district
   var uniqueB = districtB.unique();
@@ -268,6 +284,23 @@ function draw(){
       };
     pop();
   };
+  for (var j = 0; j < uniqueB.length; j++) {
+   for (var i = 0; i < uniqueB.length; i++) {  
+        if (mouseX > 900 && 
+          mouseX < (900+((j+1)*10)) && 
+          mouseY > (80+i*15) &&
+          mouseY < ((i+1)*15+80)
+        ){
+          noStroke();
+          fill(100);
+          textSize(10);
+          text("District " + uniqueB[i], 850,((i+1)*15+75));
+          fill(255,120);
+          rect(900,(i*15+80),500,10);
+        };
+    };
+  };
+
 
   //Brooklyn
   var uniqueBR = districtBR.unique();
@@ -283,13 +316,31 @@ function draw(){
         } else {
          fill (196,218,241);
         };
-        rect(900,j*15+270,10,10);
+        rect(900,j*15+260,10,10);
         translate(15,0);
         var b1 = districtBR.lastIndexOf(uniqueBR[j])+1;
-        }
+        };
       };
     pop();
   };
+
+  for (var j = 0; j < uniqueBR.length; j++) {
+   for (var i = 0; i < uniqueBR.length; i++) {  
+        if (mouseX > 900 && 
+          mouseX < (900+((j+1)*10)) && 
+          mouseY > (260+i*15) &&
+          mouseY < ((i+1)*15+260)
+        ){
+          noStroke();
+          fill(100);
+          textSize(10);
+          text("District " + uniqueBR[i], 850,((i+1)*15+255));
+          fill(255,120);
+          rect(900,(i*15+260),500,10);
+        };
+    };
+  };
+
   //manhattan
   var uniqueM = districtM.unique();
   uniqueM.splice(-1,1);
@@ -303,13 +354,31 @@ function draw(){
         } else {
          fill (196,218,241);
         };
-        rect(900,j*15+480,10,10);
+        rect(900,j*15+450,10,10);
         translate(15,0);
         var b1 = districtM.lastIndexOf(uniqueM[j])+1;
         }
       };
     pop();
   };
+
+  for (var j = 0; j < uniqueM.length; j++) {
+   for (var i = 0; i < uniqueM.length; i++) {  
+        if (mouseX > 900 && 
+          mouseX < (900+((j+1)*10)) && 
+          mouseY > (450+i*15) &&
+          mouseY < ((i+1)*15+450)
+        ){
+          noStroke();
+          fill(100);
+          textSize(10);
+          text("District " + uniqueM[i], 850,((i+1)*15+445));
+          fill(255,120);
+          rect(900,(i*15+450),500,10);
+        };
+    };
+  };
+
   //queens
   var uniqueQ = districtQ.unique();
   uniqueQ.splice(-1,1);
@@ -323,13 +392,30 @@ function draw(){
         } else {
          fill (196,218,241);
         };
-        rect(900,j*15+570,10,10);
+        rect(900,j*15+520,10,10);
         translate(15,0);
         var b1 = districtQ.lastIndexOf(uniqueQ[j])+1;
 
         }
       };
     pop();
+  };
+
+    for (var j = 0; j < uniqueQ.length; j++) {
+   for (var i = 0; i < uniqueQ.length; i++) {  
+        if (mouseX > 900 && 
+          mouseX < (900+((j+1)*10)) && 
+          mouseY > (520+i*15) &&
+          mouseY < ((i+1)*15+520)
+        ){
+          noStroke();
+          fill(100);
+          textSize(10);
+          text("District " + uniqueQ[i], 850,((i+1)*15+515));
+          fill(255,120);
+          rect(900,(i*15+520),500,10);
+        };
+    };
   };
   //staten island
   var uniqueS = districtS.unique();
@@ -344,7 +430,7 @@ function draw(){
         } else {
          fill (196,218,241);
         };
-        rect(900,j*15+730,10,10);
+        rect(900,j*15+650,10,10);
         translate(15,0);
         var b1 = districtS.lastIndexOf(uniqueS[j])+1;
         }
@@ -352,18 +438,21 @@ function draw(){
     pop();
   };
 
-  for (var i = 0; i < uniqueQ.length; i++) {
-    for (var j = 0; j < boroughQ.length; j++) {
-      if (mouseX > (250+(j*25)) && 
-        mouseX < (250+((j+1)*20)) && 
-        mouseY > (780+i*25)&&
-        mouseY < ((i+1)*25+780)
+  for (var j = 0; j < uniqueS.length; j++) {
+   for (var i = 0; i < uniqueS.length; i++) {  
+        if (mouseX > 900 && 
+          mouseX < (900+((j+1)*10)) && 
+          mouseY > (650+i*15) &&
+          mouseY < ((i+1)*15+650)
         ){
-        noStroke();
-        fill(0);
-        text("District " + districtQ[i], 500,500);
-      }
-    }
+          noStroke();
+          fill(100);
+          textSize(10);
+          text("District " + uniqueS[i], 850,((i+1)*15+645));
+          fill(255,120);
+          rect(900,(i*15+650),500,10);
+        };
+    };
   };
 
 }
