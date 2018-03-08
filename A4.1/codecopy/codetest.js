@@ -47,12 +47,6 @@ function mercY(lat) {
 
 function setup() {
 
-  button = createButton('City-owned');
-  button.position(695,98);
-  button.mousePressed(toggleState);
-  button = createButton('Private');
-  button.position(695,120);
-  button.mousePressed(toggleState);
 
   var boroughB = table.getColumn("BoroughB");
   var districtB = table.getColumn("DistrictB");
@@ -258,9 +252,9 @@ function draw(){
   //legend
   textFont(Aller_Lt);
  fill(114,150,183);
- rect(680,103,10,10);
+ rect(680,100,10,10);
  fill (196,218,241);
- rect(680,123,10,10);
+ rect(680,120,10,10);
  fill(255);
 textSize(10);
 text('City-owned',700,110);
@@ -490,8 +484,7 @@ Array.prototype.unique = function() {
     return arr; 
 }
 
-function toggleState() {
-  state = (state == 0) ? 1 : 0; // shorthand if-statement, aka "inline if"
-  animFrame = maxAnimFrame;
-}
+
+
+
 
