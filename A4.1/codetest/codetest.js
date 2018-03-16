@@ -1,6 +1,8 @@
 var mapimg;
 var vacantlots;
 var table;
+var stateCity = 0;
+var statePrivate = 0;
 
 
 var Aller_Lt;
@@ -49,10 +51,11 @@ function setup() {
 
   button = createButton('City-owned');
   button.position(695,98);
-  button.mousePressed(toggleState);
+  button.mousePressed(toggleStateCity);
   button = createButton('Private');
   button.position(695,120);
-  button.mousePressed(toggleState);
+  button.mousePressed(toggleStatePrivate);
+
 
   var boroughB = table.getColumn("BoroughB");
   var districtB = table.getColumn("DistrictB");
@@ -79,145 +82,15 @@ function setup() {
   pop();
 
 
-  var cx = mercX(clon);
-  var cy = mercY(clat);
-
-
-
-// Bronx
-  for (var i = 1; i < vacantlots.length; i++) {
-    var data = vacantlots[i].split(/,/);
-    //console.log(data);
-    var lat = data[25];
-    var lon = data[26];
-    //console.log(lat);
-
-    var x = mercX(lon) - cx;
-    var y = mercY(lat) - cy;
- 
-    if(x < - width/2) {
-      x += width;
-    } else if(x > width / 2) {
-      x -= width;
-    }
-
-    
-    noStroke();
-    if (typeBR[i] == 'City'){
-      fill(114,150,183);
-    } else {
-      fill (196,218,241);
-    };
-      ellipse(x, y, 5, 5);
-    
-  };
-
-
-
-// Brooklyn
-  for (var i = 1; i < vacantlots.length; i++) {
-    var data = vacantlots[i].split(/,/);
-    //console.log(data);
-    var lat = data[41];
-    var lon = data[42];
-    //console.log(lat);
-
-    var x = mercX(lon) - cx;
-    var y = mercY(lat) - cy;
- 
-    if(x < - width/2) {
-      x += width;
-    } else if(x > width / 2) {
-      x -= width;
-    }
-    
-    noStroke();
-    if (typeBR[i] == 'City'){
-      fill(114,150,183);
-    } else {
-      fill (196,218,241);
-    };
-      ellipse(x, y, 5, 5);
-  };
-
-// Manhattan
-  for (var i = 1; i < vacantlots.length; i++) {
-    var data = vacantlots[i].split(/,/);
-    //console.log(data);
-    var lat = data[57];
-    var lon = data[58];
-    //console.log(lat);
-
-    var x = mercX(lon) - cx;
-    var y = mercY(lat) - cy;
- 
-    if(x < - width/2) {
-      x += width;
-    } else if(x > width / 2) {
-      x -= width;
-    }
-    
-    noStroke();
-    if (typeBR[i] == 'City'){
-      fill(114,150,183);
-    } else {
-      fill (196,218,241);
-    };
-      ellipse(x, y, 5, 5);
-  };
-
-// Queens
-  for (var i = 1; i < vacantlots.length; i++) {
-    var data = vacantlots[i].split(/,/);
-    var lat = data[73];
-    var lon = data[74];
-
-    var x = mercX(lon) - cx;
-    var y = mercY(lat) - cy;
- 
-    if(x < - width/2) {
-      x += width;
-    } else if(x > width / 2) {
-      x -= width;
-    }
-  
-    noStroke();
-    if (typeBR[i] == 'City'){
-      fill(114,150,183);
-    } else {
-      fill (196,218,241);
-    };
-      ellipse(x, y, 5, 5);
-  };
-
-// Staten Island
-  for (var i = 1; i < vacantlots.length; i++) {
-    var data = vacantlots[i].split(/,/);
-    var lat = data[91];
-    var lon = data[92];
-
-    var x = mercX(lon) - cx;
-    var y = mercY(lat) - cy;
- 
-    if(x < - width/2) {
-      x += width;
-    } else if(x > width / 2) {
-      x -= width;
-    }
-    
-    noStroke();
-    if (typeBR[i] == 'City'){
-      fill(114,150,183);
-    } else {
-      fill (196,218,241);
-    };
-      ellipse(x, y, 5, 5);
-  };
 
 }
 
 
 function draw(){
+
+  
+  fill(255);
+  rect(800,0,1000,1000);
 
 
   var boroughB = table.getColumn("BoroughB");
@@ -235,8 +108,244 @@ function draw(){
   var boroughS = table.getColumn("BoroughS");
   var districtS = table.getColumn("DistrictS");
   var typeS = table.getColumn('OwnerTypeS');
-  fill(255);
-  rect(800,0,1000,1000);
+
+  translate(width / 2, height / 2);
+
+  var cx = mercX(clon);
+  var cy = mercY(clat);
+
+
+   // Bronx
+  for (var i = 1; i < vacantlots.length; i++) {
+    var data = vacantlots[i].split(/,/);
+    //console.log(data);
+    var lat = data[25];
+    var lon = data[26];
+    //console.log(lat);
+
+    var x = mercX(lon) - cx;
+    var y = mercY(lat) - cy;
+ 
+    if(x < - width/2) {
+      x += width;
+    } else if(x > width / 2) {
+      x -= width;
+    }
+
+  
+    noStroke();
+    if (stateCity == 0){
+      if (typeB[i] == 'City'){
+        noStroke();
+        fill(114,150,183);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (stateCity ==1){
+      if (typeB[i] == 'City'){
+        fill(170);
+        strokeWeight(2);
+        ellipse(x, y, 5, 5);
+      };
+    };
+
+    if (statePrivate == 0){
+      if (typeB[i] == 'Private'){
+        noStroke();
+        fill (196,218,241);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (statePrivate == 1){
+      if (typeB[i] == 'Private'){
+       fill (170);
+       strokeWeight(2);
+       ellipse(x, y, 5, 5);
+      };
+    };
+  };
+
+
+
+  // Brooklyn
+  for (var i = 1; i < vacantlots.length; i++) {
+    var data = vacantlots[i].split(/,/);
+    //console.log(data);
+    var lat = data[41];
+    var lon = data[42];
+    //console.log(lat);
+
+    var x = mercX(lon) - cx;
+    var y = mercY(lat) - cy;
+ 
+    if(x < - width/2) {
+      x += width;
+    } else if(x > width / 2) {
+      x -= width;
+    }
+    
+    noStroke();
+    if (stateCity == 0){
+      if (typeBR[i] == 'City'){
+        noStroke();
+        fill(114,150,183);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (stateCity ==1){
+      if (typeBR[i] == 'City'){
+        fill(170);
+        strokeWeight(2);
+        ellipse(x, y, 5, 5);
+      };
+    };
+    if (statePrivate == 0){
+      if (typeBR[i] == 'Private'){
+        noStroke();
+        fill (196,218,241);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (statePrivate == 1){
+      if (typeBR[i] == 'Private'){
+       fill (170);
+       strokeWeight(2);
+       ellipse(x, y, 5, 5);
+      };
+    };
+  };
+
+  // Manhattan
+  for (var i = 1; i < vacantlots.length; i++) {
+    var data = vacantlots[i].split(/,/);
+    //console.log(data);
+    var lat = data[57];
+    var lon = data[58];
+    //console.log(lat);
+
+    var x = mercX(lon) - cx;
+    var y = mercY(lat) - cy;
+ 
+    if(x < - width/2) {
+      x += width;
+    } else if(x > width / 2) {
+      x -= width;
+    }
+    
+    noStroke();
+ if (stateCity == 0){
+      if (typeM[i] == 'City'){
+        noStroke();
+        fill(114,150,183);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (stateCity ==1){
+      if (typeM[i] == 'City'){
+        fill(170);
+        strokeWeight(2);
+        ellipse(x, y, 5, 5);
+      };
+    };
+    if (statePrivate == 0){
+      if (typeM[i] == 'Private'){
+        noStroke();
+        fill (196,218,241);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (statePrivate == 1){
+      if (typeM[i] == 'Private'){
+       fill (170);
+       strokeWeight(2);
+       ellipse(x, y, 5, 5);
+      };
+    };
+  };
+
+  // Queens
+  for (var i = 1; i < vacantlots.length; i++) {
+    var data = vacantlots[i].split(/,/);
+    var lat = data[73];
+    var lon = data[74];
+
+    var x = mercX(lon) - cx;
+    var y = mercY(lat) - cy;
+ 
+    if(x < - width/2) {
+      x += width;
+    } else if(x > width / 2) {
+      x -= width;
+    }
+  
+    noStroke();
+ if (stateCity == 0){
+      if (typeQ[i] == 'City'){
+        noStroke();
+        fill(114,150,183);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (stateCity ==1){
+      if (typeQ[i] == 'City'){
+        fill(170);
+        strokeWeight(2);
+        ellipse(x, y, 5, 5);
+      };
+    };
+    if (statePrivate == 0){
+      if (typeQ[i] == 'Private'){
+        noStroke();
+        fill (196,218,241);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (statePrivate == 1){
+      if (typeQ[i] == 'Private'){
+       fill (170);
+       strokeWeight(2);
+       ellipse(x, y, 5, 5);
+      };
+    };
+  };
+
+  // Staten Island
+  for (var i = 1; i < vacantlots.length; i++) {
+    var data = vacantlots[i].split(/,/);
+    var lat = data[91];
+    var lon = data[92];
+
+    var x = mercX(lon) - cx;
+    var y = mercY(lat) - cy;
+ 
+    if(x < - width/2) {
+      x += width;
+    } else if(x > width / 2) {
+      x -= width;
+    }
+    
+    noStroke();
+ if (stateCity == 0){
+      if (typeS[i] == 'City'){
+        noStroke();
+        fill(114,150,183);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (stateCity ==1){
+      if (typeS[i] == 'City'){
+        fill(170);
+        strokeWeight(2);
+        ellipse(x, y, 5, 5);
+      };
+    };
+    if (statePrivate == 0){
+      if (typeS[i] == 'Private'){
+        noStroke();
+        fill (196,218,241);
+        ellipse(x, y, 5, 5);
+      };
+    } else if (statePrivate == 1){
+      if (typeS[i] == 'Private'){
+       fill (170);
+       strokeWeight(2);
+       ellipse(x, y, 5, 5);
+      };
+    };
+  };
+
+  translate(-width / 2, -height / 2);
 
 
   fill(100);
@@ -249,7 +358,7 @@ function draw(){
   text('Lot Ownership',680,90);
   textSize(14);
   fill(100);
- textAlign(LEFT);
+  textAlign(LEFT);
   text('Bronx',900,75);
   text('Brooklyn',900,252);
   text('Manhattan',900,442);
@@ -262,11 +371,11 @@ function draw(){
  fill (196,218,241);
  rect(680,123,10,10);
  fill(255);
-textSize(10);
-text('City-owned',700,110);
-text('Private',700,130);
-rect(680,92,80,1);
-  console.log(districtB);
+ textSize(10);
+ text('City-owned',700,110);
+ text('Private',700,130);
+ rect(680,92,80,1);
+  //console.log(districtB);
   //unique values of district
   var uniqueB = districtB.unique();
   //remove last index
@@ -308,7 +417,7 @@ rect(680,92,80,1);
     };
   };
 
-
+  push();
   //Brooklyn
   var uniqueBR = districtBR.unique();
   //remove last index
@@ -462,6 +571,9 @@ rect(680,92,80,1);
     };
   };
 
+  console.log(stateCity);
+  console.log(statePrivate);
+
 }
 
 function extractData() {
@@ -490,8 +602,11 @@ Array.prototype.unique = function() {
     return arr; 
 }
 
-function toggleState() {
-  state = (state == 0) ? 1 : 0; // shorthand if-statement, aka "inline if"
-  animFrame = maxAnimFrame;
+function toggleStateCity() {
+  stateCity = (stateCity == 0) ? 1 : 0; 
+}
+
+function toggleStatePrivate() {
+  statePrivate = (statePrivate == 0) ? 1 : 0;
 }
 
