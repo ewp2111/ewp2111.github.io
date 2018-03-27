@@ -124,7 +124,7 @@ var Particle = function (pos, img_) {
 
     this.vel = createVector(vx,vy);
     this.acc = createVector();
-    this.lifespan = 200.0;
+    this.lifespan = hour()*10;
     this.texture = img_;
 }
 
