@@ -1,6 +1,6 @@
 var state = 0;
 var Width= 2200;
-var Height = 5000;
+var Height = 3000;
 
 function preload() {
   Aller_Lt = loadFont('Aller_Lt.ttf');
@@ -209,56 +209,6 @@ function draw() {
     image(b7,510,160,200,200)
   };
 
-  //malt ingredients graph//
-  //legend (S,M,L,XL)//
-  fill(255);
-  var noS = table.getColumn("noS");
-  var noM = table.getColumn("noM");
-  var noL = table.getColumn("noL");
-  var noXL = table.getColumn("noXL");
-  var tbS = table.getColumn("tbS");
-  var tbM = table.getColumn("tbM");
-  var tbL = table.getColumn("tbL");
-  var tbXL = table.getColumn("tbXL");
-  var year = table.getColumn("year");
-
-  console.log(year);
-  //title
-  textSize(30);
-  textFont(Aller_Bd);
-  textAlign(CENTER);
-  text('Malt Consumption by year',1100,550);
-  //axis
-  textSize(20);
-  stroke(255);
-  strokeWeight(1);
-  //yaxis
-  line(500,600,500,1200);
-  //xaxis
-  line(500,1200,1700,1200);
-  push();
-  translate(400,900);
-  angleMode(DEGREES);
-  rotate(-90);
-  noStroke();
-  text('Pounds',0,0);
-  pop();
-  noStroke();
-  text('Year',1100,1300);
-  var Yaxis= [0,1000,2000,3000,4000,5000,6000];
-  textFont(Aller_Lt);
-  for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],440,1200-600/7*i)
-  };
-  for (var i =0; i<year.length; i++) {
-    text(year[i],(500+1200/12*(i+1)),1230)
-  };
-  //plot S//
-
-  //hop ingredients graph//
-  //legend//
-  push();
-  translate(0,900);
   fill(255);
   var noS = table.getColumn("noS");
   var noM = table.getColumn("noM");
@@ -277,54 +227,143 @@ function draw() {
   var year = table.getColumn("year");
 
 
-  // console.log(year);
+
+//beer sales
+  push();
   //title
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
-  text('Hop Consumption by year',1100,550);
+  text('Beer sales',350,680);
   //axis
-  textSize(20);
+  textSize(12);
   stroke(255);
-  strokeWeight(1);
+  strokeWeight(1);  
+  var ystart= 700;
+  var yend= 1000;
+  var ytotal= ystart + yend;
+  var xstart=150;
+  var xend= 400;
   //yaxis
-  line(500,600,500,1200);
+  line(xstart,ystart,xstart,yend);
   //xaxis
-  line(500,1200,1700,1200);
+  line(xstart,yend,(yend-ystart+250),yend);
   push();
-  translate(400,900);
+  translate(90,850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
-  text('Pounds',0,0);
+  text('Milliion Pounds',0,0);
   pop();
   noStroke();
-  text('Year',1100,1300);
-  var Yaxis= [0,1000,2000,3000,4000,5000,6000];
+  textAlign(CENTER);
+  text('Year',350,1050);
+  var Yaxis= [0,50,100,150,200,250,300,350];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],440,1200-600/7*i)
+    text(Yaxis[i],120,yend-(yend-ystart)/8*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(500+1200/12*(i+1)),1230)
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
   };
-  //plot S//
+  stroke(255);
+  fill(255);
+  strokeWeight(2);
+  var endvalue=400000000;
+  var S0= ytotal-map(hop[0],0,endvalue,ystart,yend);
+  var S1= ytotal-map(hop[1],0,endvalue,ystart,yend);
+  var S2= ytotal-map(hop[2],0,endvalue,ystart,yend);
+  var S3= ytotal-map(hop[3],0,endvalue,ystart,yend);
+  var S4= ytotal-map(hop[4],0,endvalue,ystart,yend);
+  var S5= ytotal-map(hop[5],0,endvalue,ystart,yend);
+  var S6= ytotal-map(hop[6],0,endvalue,ystart,yend);
+  var S7= ytotal-map(hop[7],0,endvalue,ystart,yend);
+  var S8= ytotal-map(hop[8],0,endvalue,ystart,yend);
+  var S9= ytotal-map(hop[9],0,endvalue,ystart,yend);
+  var S10= ytotal-map(hop[10],0,endvalue,ystart,yend);
+  var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
+  for (var i =0;i< S.length; i++) {
+    line(xstart+xend/12*(i+1),S[i],xstart+xend/12*(i+2),S[i+1]);
+    ellipse(xstart+xend/12*(i+1),S[i],5,5);
+  };
   pop();
 
 
 
 
+//hop consumption
   push();
-  translate(0,1800);
+  translate(0,500);
+  //title
+  textSize(30);
+  textFont(Aller_Bd);
+  textAlign(CENTER);
+  text('Hop Consumption',350,680);
+  //axis
+  textSize(12);
+  stroke(255);
+  strokeWeight(1);  
+  var ystart= 700;
+  var yend= 1000;
+  var ytotal= ystart + yend;
+  var xstart=150;
+  var xend= 400;
+  //yaxis
+  line(xstart,ystart,xstart,yend);
+  //xaxis
+  line(xstart,yend,(yend-ystart+250),yend);
+  push();
+  translate(90,850);
+  angleMode(DEGREES);
+  rotate(-90);
+  noStroke();
+  text('Milliion Pounds',0,0);
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  text('Year',350,1050);
+  var Yaxis= [0,50,100,150,200,250,300,350];
+  textFont(Aller_Lt);
+  for (var i =0; i<Yaxis.length; i++) {
+    text(Yaxis[i],120,yend-(yend-ystart)/8*i)
+  };
+  for (var i =0; i<year.length; i++) {
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+  };
+  stroke(255);
+  fill(255);
+  strokeWeight(2);
+  var endvalue=400000000;
+  var S0= ytotal-map(hop[0],0,endvalue,ystart,yend);
+  var S1= ytotal-map(hop[1],0,endvalue,ystart,yend);
+  var S2= ytotal-map(hop[2],0,endvalue,ystart,yend);
+  var S3= ytotal-map(hop[3],0,endvalue,ystart,yend);
+  var S4= ytotal-map(hop[4],0,endvalue,ystart,yend);
+  var S5= ytotal-map(hop[5],0,endvalue,ystart,yend);
+  var S6= ytotal-map(hop[6],0,endvalue,ystart,yend);
+  var S7= ytotal-map(hop[7],0,endvalue,ystart,yend);
+  var S8= ytotal-map(hop[8],0,endvalue,ystart,yend);
+  var S9= ytotal-map(hop[9],0,endvalue,ystart,yend);
+  var S10= ytotal-map(hop[10],0,endvalue,ystart,yend);
+  var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
+  for (var i =0;i< S.length; i++) {
+    line(xstart+xend/12*(i+1),S[i],xstart+xend/12*(i+2),S[i+1]);
+    ellipse(xstart+xend/12*(i+1),S[i],5,5);
+  };
+  pop();
+
+
   //no of breweries graph//
+  push();
+  translate(0,1000);
   //legend (S,M,L,XL)//
   fill(255);
   textFont(Aller_Bd);
   textAlign(LEFT);
   textSize(15);
-  text('Size of Breweries',90,1420);
+  text('Size of Breweries',90,1120);
   textFont(Aller_Lt);
-  text('XL: >6M Barrels\nL: 2M - 6M Barrels\nM: 60,000-2M Barrels\nS: <60,000 Barrels',90,1450);
+  text('XL: >6M Barrels\nL: 2M - 6M Barrels\nM: 60,000-2M Barrels\nS: <60,000 Barrels',90,1150);
   textSize(20);
   // console.log(year);
   //title
@@ -354,7 +393,7 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',450,1280);
+  text('Year',350,1050);
   var Yaxis= [0,1000,2000,3000,4000,5000,6000];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
@@ -393,7 +432,7 @@ function draw() {
   noStroke();
   text('No. of M Breweries',350,680);
   //axis
-  textSize(15);
+  textSize(12);
   stroke(255);
   strokeWeight(1);  
   //yaxis
@@ -409,29 +448,28 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',450,1280);
-  var Yaxis= [0,1000,2000,3000,4000,5000,6000];
+  text('Year',350,1050);
+  var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/7*i)
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+xend/12*(i+1)),yend+20)
   };
-  //plot M//
-  stroke(255,0,0);
-  fill(255,0,0);
-  var M0= ytotal-map(noM[0],0,7000,ystart,yend);
-  var M1= ytotal-map(noM[1],0,7000,ystart,yend);
-  var M2= ytotal-map(noM[2],0,7000,ystart,yend);
-  var M3= ytotal-map(noM[3],0,7000,ystart,yend);
-  var M4= ytotal-map(noM[4],0,7000,ystart,yend);
-  var M5= ytotal-map(noM[5],0,7000,ystart,yend);
-  var M6= ytotal-map(noM[6],0,7000,ystart,yend);
-  var M7= ytotal-map(noM[7],0,7000,ystart,yend);
-  var M8= ytotal-map(noM[8],0,7000,ystart,yend);
-  var M9= ytotal-map(noM[9],0,7000,ystart,yend);
-  var M10= ytotal-map(noM[10],0,7000,ystart,yend);
+    stroke(255,0,0);
+    fill(255,0,0);
+  var M0= ytotal-map(noM[0],0,200,ystart,yend);
+  var M1= ytotal-map(noM[1],0,200,ystart,yend);
+  var M2= ytotal-map(noM[2],0,200,ystart,yend);
+  var M3= ytotal-map(noM[3],0,200,ystart,yend);
+  var M4= ytotal-map(noM[4],0,200,ystart,yend);
+  var M5= ytotal-map(noM[5],0,200,ystart,yend);
+  var M6= ytotal-map(noM[6],0,200,ystart,yend);
+  var M7= ytotal-map(noM[7],0,200,ystart,yend);
+  var M8= ytotal-map(noM[8],0,200,ystart,yend);
+  var M9= ytotal-map(noM[9],0,200,ystart,yend);
+  var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
     line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
@@ -449,7 +487,7 @@ function draw() {
   noStroke();
   text('No. of L Breweries',350,680);
   //axis
-  textSize(15);
+  textSize(12);
   stroke(255);
   strokeWeight(1);  
 
@@ -466,28 +504,28 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',450,1280);
-  var Yaxis= [0,1000,2000,3000,4000,5000,6000];
+  text('Year',350,1050);
+  var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/7*i)
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+xend/12*(i+1)),yend+20)
   };
     stroke(0,255,0);
     fill(0,255,0);
-  var L0= ytotal-map(noL[0],0,7000,ystart,yend);
-  var L1= ytotal-map(noL[1],0,7000,ystart,yend);
-  var L2= ytotal-map(noL[2],0,7000,ystart,yend);
-  var L3= ytotal-map(noL[3],0,7000,ystart,yend);
-  var L4= ytotal-map(noL[4],0,7000,ystart,yend);
-  var L5= ytotal-map(noL[5],0,7000,ystart,yend);
-  var L6= ytotal-map(noL[6],0,7000,ystart,yend);
-  var L7= ytotal-map(noL[7],0,7000,ystart,yend);
-  var L8= ytotal-map(noL[8],0,7000,ystart,yend);
-  var L9= ytotal-map(noL[9],0,7000,ystart,yend);
-  var L10= ytotal-map(noL[10],0,7000,ystart,yend);
+  var L0= ytotal-map(noL[0],0,200,ystart,yend);
+  var L1= ytotal-map(noL[1],0,200,ystart,yend);
+  var L2= ytotal-map(noL[2],0,200,ystart,yend);
+  var L3= ytotal-map(noL[3],0,200,ystart,yend);
+  var L4= ytotal-map(noL[4],0,200,ystart,yend);
+  var L5= ytotal-map(noL[5],0,200,ystart,yend);
+  var L6= ytotal-map(noL[6],0,200,ystart,yend);
+  var L7= ytotal-map(noL[7],0,200,ystart,yend);
+  var L8= ytotal-map(noL[8],0,200,ystart,yend);
+  var L9= ytotal-map(noL[9],0,200,ystart,yend);
+  var L10= ytotal-map(noL[10],0,200,ystart,yend);
   var L = [L0,L1,L2,L3,L4,L5,L6,L7,L8,L9,L10];
   for (var i =0;i< L.length; i++) {
     line(xstart+xend/12*(i+1),L[i],xstart+xend/12*(i+2),L[i+1]);
@@ -504,7 +542,7 @@ function draw() {
   noStroke();
   text('No. of XL Breweries',350,680);
   //axis
-  textSize(15);
+  textSize(12);
   stroke(255);
   strokeWeight(1);  
 
@@ -521,31 +559,31 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',450,1280);
-  var Yaxis= [0,1000,2000,3000,4000,5000,6000];
+  text('Year',350,1050);
+  var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/7*i)
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+xend/12*(i+1)),yend+20)
   };
   stroke(0,0,255);
   fill(0,0,255);
-  var XL0= ytotal-map(noXL[0],0,7000,ystart,yend);
-  var XL1= ytotal-map(noXL[1],0,7000,ystart,yend);
-  var XL2= ytotal-map(noXL[2],0,7000,ystart,yend);
-  var XL3= ytotal-map(noXL[3],0,7000,ystart,yend);
-  var XL4= ytotal-map(noXL[4],0,7000,ystart,yend);
-  var XL5= ytotal-map(noXL[5],0,7000,ystart,yend);
-  var XL6= ytotal-map(noXL[6],0,7000,ystart,yend);
-  var XL7= ytotal-map(noXL[7],0,7000,ystart,yend);
-  var XL8= ytotal-map(noXL[8],0,7000,ystart,yend);
-  var XL9= ytotal-map(noXL[9],0,7000,ystart,yend);
-  var XL10= ytotal-map(noXL[10],0,7000,ystart,yend);
+  var XL0= ytotal-map(noXL[0],0,200,ystart,yend);
+  var XL1= ytotal-map(noXL[1],0,200,ystart,yend);
+  var XL2= ytotal-map(noXL[2],0,200,ystart,yend);
+  var XL3= ytotal-map(noXL[3],0,200,ystart,yend);
+  var XL4= ytotal-map(noXL[4],0,200,ystart,yend);
+  var XL5= ytotal-map(noXL[5],0,200,ystart,yend);
+  var XL6= ytotal-map(noXL[6],0,200,ystart,yend);
+  var XL7= ytotal-map(noXL[7],0,200,ystart,yend);
+  var XL8= ytotal-map(noXL[8],0,200,ystart,yend);
+  var XL9= ytotal-map(noXL[9],0,200,ystart,yend);
+  var XL10= ytotal-map(noXL[10],0,200,ystart,yend);
   var XL = [XL0,XL1,XL2,XL3,XL4,XL5,XL6,XL7,XL8,XL9,XL10];
   for (var i =0;i< L.length; i++) {
-    line(xstart+xend/12*(i+1),XL[i],xstart+xend/12*(i+2),L[i+1]);
+    line(xstart+xend/12*(i+1),XL[i],xstart+xend/12*(i+2),XL[i+1]);
     ellipse(xstart+xend/12*(i+1),XL[i],5,5);
   };
   pop();
