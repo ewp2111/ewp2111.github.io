@@ -20,17 +20,18 @@ function setup() {
   createCanvas(Width, Height);
   background (150);
   frameRate(30);
-  noLoop();
+  // noLoop();
 }
 
 function draw() {
   fill(0);
+  textAlign(LEFT);
   textFont(Aller_Bd);
   textSize(30);
   //select fav beer//
   fill(255);
+    noStroke();
   text('Select Favorite Beer',80,100);
-  noStroke();
   triangle(50,80,70,80,60,100);
 
   //hover
@@ -229,7 +230,6 @@ function draw() {
 
 
 //beer sales
-  push();
   //title
   textSize(30);
   textFont(Aller_Bd);
@@ -243,11 +243,11 @@ function draw() {
   var yend= 1000;
   var ytotal= ystart + yend;
   var xstart=150;
-  var xend= 400;
+  var xend= 550;
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
   translate(90,850);
   angleMode(DEGREES);
@@ -264,7 +264,7 @@ function draw() {
     text(Yaxis[i],120,yend-(yend-ystart)/8*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
   stroke(255);
   fill(255);
@@ -283,21 +283,23 @@ function draw() {
   var S10= ytotal-map(hop[10],0,endvalue,ystart,yend);
   var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
   for (var i =0;i< S.length; i++) {
-    line(xstart+xend/12*(i+1),S[i],xstart+xend/12*(i+2),S[i+1]);
-    ellipse(xstart+xend/12*(i+1),S[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),S[i],xstart+(xend-xstart)/12*(i+2),S[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
   };
-  pop();
 
 
-//Production 
+//Production
+  var ystart= 700;
+  var yend= 1000;
+  var ytotal= ystart + yend;
+  var xstart=650;
+  var xend= 1050; 
 //title
-  push();
-  translate(500,0);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('Production',350,680);
+  text('Production',850,680);
   //axis
   textSize(12);
   stroke(255);
@@ -305,9 +307,9 @@ function draw() {
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(590,850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -315,14 +317,14 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',350,1050);
+  text('Year',850,1050);
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],620,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
@@ -339,22 +341,24 @@ function draw() {
   var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
-    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
-    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-  pop();
 
 
 
 //Malt Consumption 
+  var ystart= 700;
+  var yend= 1000;
+  var ytotal= ystart + yend;
+  var xstart=1150;
+  var xend= 1550; 
 //title
-  push();
-  translate(1000,0);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('Malt Consumption',350,680);
+  text('Malt Consumption',1350,680);
   //axis
   textSize(12);
   stroke(255);
@@ -362,9 +366,9 @@ function draw() {
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(1090,850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -376,10 +380,10 @@ function draw() {
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1120,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
@@ -396,21 +400,23 @@ function draw() {
   var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
-    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
-    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-  pop();
 
 
-  //Rice Consumption 
+  //Rice Consumption
+  var ystart= 700;
+  var yend= 1000;
+  var ytotal= ystart + yend;
+  var xstart=1650;
+  var xend= 2050;  
   //title
-  push();
-  translate(1500,0);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('Rice Consumption',350,680);
+  text('Rice Consumption',1850,680);
   //axis
   textSize(12);
   stroke(255);
@@ -418,9 +424,9 @@ function draw() {
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(1590,850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -432,10 +438,10 @@ function draw() {
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1620,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
@@ -452,37 +458,35 @@ function draw() {
   var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
-    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
-    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-  pop();
 
 
 
 
 //hop consumption
-  push();
-  translate(0,500);
+  var ystart= 1200;
+  var yend= 1500;
+  var ytotal= ystart + yend;
+  var xstart=150;
+  var xend= 550;  
   //title
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
-  text('Hop Consumption',350,680);
+  text('Hop Consumption',350,1180);
   //axis
   textSize(12);
   stroke(255);
   strokeWeight(1);  
-  var ystart= 700;
-  var yend= 1000;
-  var ytotal= ystart + yend;
-  var xstart=150;
-  var xend= 400;
+
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(90,1350);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -490,14 +494,14 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',350,1050);
+  text('Year',350,1550);
   var Yaxis= [0,50,100,150,200,250,300,350];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
     text(Yaxis[i],120,yend-(yend-ystart)/8*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
   stroke(255);
   fill(255);
@@ -516,22 +520,24 @@ function draw() {
   var S10= ytotal-map(hop[10],0,endvalue,ystart,yend);
   var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
   for (var i =0;i< S.length; i++) {
-    line(xstart+xend/12*(i+1),S[i],xstart+xend/12*(i+2),S[i+1]);
-    ellipse(xstart+xend/12*(i+1),S[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),S[i],xstart+(xend-xstart)/12*(i+2),S[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
   };
-  pop();
 
 
 
 //hop rate 
+  var ystart= 1200;
+  var yend= 1500;
+  var ytotal= ystart + yend;
+  var xstart=650;
+  var xend= 1050;
 //title
-  push();
-  translate(500,500);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('Hop Rate',350,680);
+  text('Hop Rate',850,1180);
   //axis
   textSize(12);
   stroke(255);
@@ -539,9 +545,9 @@ function draw() {
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(590,1350);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -549,14 +555,14 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',350,1050);
+  text('Year',850,1550);
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],620,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
@@ -573,22 +579,24 @@ function draw() {
   var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
-    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
-    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-  pop();
 
 
 
 //hop acreage 
+  var ystart= 1200;
+  var yend= 1500;
+  var ytotal= ystart + yend;
+  var xstart=1150;
+  var xend= 1550;
 //title
-  push();
-  translate(1000,500);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('Hop Acreage',350,680);
+  text('Hop Acreage',1350,1180);
   //axis
   textSize(12);
   stroke(255);
@@ -596,9 +604,9 @@ function draw() {
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(1090,1350);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -610,10 +618,10 @@ function draw() {
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1120,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
@@ -630,21 +638,23 @@ function draw() {
   var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
-    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
-    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-  pop();
 
 
   //hop variety 
+  var ystart= 1200;
+  var yend= 1500;
+  var ytotal= ystart + yend;
+  var xstart=1650;
+  var xend= 2050;
   //title
-  push();
-  translate(1500,500);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('Hop Variety',350,680);
+  text('Hop Variety',1850,1180);
   //axis
   textSize(12);
   stroke(255);
@@ -652,9 +662,9 @@ function draw() {
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(1590,1350);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -666,10 +676,10 @@ function draw() {
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1620,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
@@ -686,45 +696,44 @@ function draw() {
   var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
-    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
-    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-  pop();
+
 
 
   //no of breweries graph//
-  push();
-  translate(0,1000);
   //legend (S,M,L,XL)//
   fill(255);
   textFont(Aller_Bd);
   textAlign(LEFT);
   textSize(15);
-  text('Size of Breweries',90,1120);
+  text('Size of Breweries',90,2120);
   textFont(Aller_Lt);
-  text('XL: >6M Barrels\nL: 2M - 6M Barrels\nM: 60,000-2M Barrels\nS: <60,000 Barrels',90,1150);
+  text('XL: >6M Barrels\nL: 2M - 6M Barrels\nM: 60,000-2M Barrels\nS: <60,000 Barrels',90,2150);
   textSize(20);
   // console.log(year);
+  var ystart= 1700;
+  var yend= 2000;
+  var ytotal= ystart + yend;
+  var xstart=150;
+  var xend= 550;
   //title
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
-  text('No. of S Breweries',350,680);
+  text('No. of S Breweries',350,1680);
   //axis
   textSize(12);
   stroke(255);
   strokeWeight(1);  
-  var ystart= 700;
-  var yend= 1000;
-  var ytotal= ystart + yend;
-  var xstart=150;
-  var xend= 400;
+
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(90,1850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -732,14 +741,14 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',350,1050);
+  text('Year',350,2050);
   var Yaxis= [0,1000,2000,3000,4000,5000,6000];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
     text(Yaxis[i],120,yend-(yend-ystart)/7*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
   //plot S//
   stroke(255);
@@ -758,18 +767,21 @@ function draw() {
   var S10= ytotal-map(noS[10],0,7000,ystart,yend);
   var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
   for (var i =0;i< S.length; i++) {
-    line(xstart+xend/12*(i+1),S[i],xstart+xend/12*(i+2),S[i+1]);
-    ellipse(xstart+xend/12*(i+1),S[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),S[i],xstart+(xend-xstart)/12*(i+2),S[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
   };
 
   //title
-  push();
-  translate(500,0);
+  var ystart= 1700;
+  var yend= 2000;
+  var ytotal= ystart + yend;
+  var xstart=650;
+  var xend= 1050;
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of M Breweries',350,680);
+  text('No. of M Breweries',850,1680);
   //axis
   textSize(12);
   stroke(255);
@@ -777,9 +789,9 @@ function draw() {
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(590,1850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -787,17 +799,16 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',350,1050);
+  text('Year',850,2050);
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],620,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-    stroke(255,0,0);
-    fill(255,0,0);
+    stroke(255);
   var M0= ytotal-map(noM[0],0,200,ystart,yend);
   var M1= ytotal-map(noM[1],0,200,ystart,yend);
   var M2= ytotal-map(noM[2],0,200,ystart,yend);
@@ -811,20 +822,22 @@ function draw() {
   var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
-    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
-    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-  pop();
 
   //plot L//
    //title
-  push();
-  translate(1000,0);
+  var ystart= 1700;
+  var yend= 2000;
+  var ytotal= ystart + yend;
+  var xstart=1150;
+  var xend= 1550;
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of L Breweries',350,680);
+  text('No. of L Breweries',1350,1680);
   //axis
   textSize(12);
   stroke(255);
@@ -833,9 +846,9 @@ function draw() {
     //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(1090,1850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -843,17 +856,16 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',350,1050);
+  text('Year',1350,2050);
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1120,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-    stroke(0,255,0);
-    fill(0,255,0);
+    stroke(255);
   var L0= ytotal-map(noL[0],0,200,ystart,yend);
   var L1= ytotal-map(noL[1],0,200,ystart,yend);
   var L2= ytotal-map(noL[2],0,200,ystart,yend);
@@ -867,19 +879,21 @@ function draw() {
   var L10= ytotal-map(noL[10],0,200,ystart,yend);
   var L = [L0,L1,L2,L3,L4,L5,L6,L7,L8,L9,L10];
   for (var i =0;i< L.length; i++) {
-    line(xstart+xend/12*(i+1),L[i],xstart+xend/12*(i+2),L[i+1]);
-    ellipse(xstart+xend/12*(i+1),L[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),L[i],xstart+(xend-xstart)/12*(i+2),L[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),L[i],5,5);
   };
-  pop();
 
   //plot XL//
-  push();
-  translate(1500,0);
+  var ystart= 1700;
+  var yend= 2000;
+  var ytotal= ystart + yend;
+  var xstart=1650;
+  var xend= 2050;
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of XL Breweries',350,680);
+  text('No. of XL Breweries',1850,1680);
   //axis
   textSize(12);
   stroke(255);
@@ -888,9 +902,9 @@ function draw() {
     //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
-  line(xstart,yend,(yend-ystart+250),yend);
+  line(xstart,yend,xend,yend);
   push();
-  translate(90,850);
+  translate(1590,1850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -898,17 +912,16 @@ function draw() {
   pop();
   noStroke();
   textAlign(CENTER);
-  text('Year',350,1050);
+  text('Year',1850,2050);
   var Yaxis= [0,100];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1620,yend-(yend-ystart)/2*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+    text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-  stroke(0,0,255);
-  fill(0,0,255);
+  stroke(255);
   var XL0= ytotal-map(noXL[0],0,200,ystart,yend);
   var XL1= ytotal-map(noXL[1],0,200,ystart,yend);
   var XL2= ytotal-map(noXL[2],0,200,ystart,yend);
@@ -922,11 +935,9 @@ function draw() {
   var XL10= ytotal-map(noXL[10],0,200,ystart,yend);
   var XL = [XL0,XL1,XL2,XL3,XL4,XL5,XL6,XL7,XL8,XL9,XL10];
   for (var i =0;i< L.length; i++) {
-    line(xstart+xend/12*(i+1),XL[i],xstart+xend/12*(i+2),XL[i+1]);
-    ellipse(xstart+xend/12*(i+1),XL[i],5,5);
+    line(xstart+(xend-xstart)/12*(i+1),XL[i],xstart+(xend-xstart)/12*(i+2),XL[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),XL[i],5,5);
   };
-  pop();
-
 }
 
 function mousePressed() {
