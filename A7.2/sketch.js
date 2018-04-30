@@ -1,5 +1,5 @@
 var state = 0;
-var Width= 2500;
+var Width= 2200;
 var Height = 5000;
 
 function preload() {
@@ -331,22 +331,22 @@ function draw() {
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
-  text('No. of S Breweries',450,680);
+  text('No. of S Breweries',350,680);
   //axis
-  textSize(15);
+  textSize(12);
   stroke(255);
   strokeWeight(1);  
   var ystart= 700;
-  var yend= 1200;
+  var yend= 1000;
   var ytotal= ystart + yend;
   var xstart=150;
-  var xend= 600;
+  var xend= 400;
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
   line(xstart,yend,(yend-ystart+250),yend);
   push();
-  translate(50,950);
+  translate(90,850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -358,10 +358,10 @@ function draw() {
   var Yaxis= [0,1000,2000,3000,4000,5000,6000];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,1200-500/7*i)
+    text(Yaxis[i],120,yend-(yend-ystart)/7*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),1230)
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
   };
   //plot S//
   stroke(255);
@@ -386,27 +386,22 @@ function draw() {
 
   //title
   push();
-  translate(800,0);
+  translate(500,0);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of M Breweries',450,680);
+  text('No. of M Breweries',350,680);
   //axis
   textSize(15);
   stroke(255);
   strokeWeight(1);  
-  var ystart= 700;
-  var yend= 1200;
-  var ytotal= ystart + yend;
-  var xstart=150;
-  var xend= 600;
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
   line(xstart,yend,(yend-ystart+250),yend);
   push();
-  translate(50,950);
+  translate(90,850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -418,10 +413,10 @@ function draw() {
   var Yaxis= [0,1000,2000,3000,4000,5000,6000];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,1200-500/7*i)
+    text(Yaxis[i],120,yend-(yend-ystart)/7*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),1230)
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
   };
   //plot M//
   stroke(255,0,0);
@@ -447,27 +442,23 @@ function draw() {
   //plot L//
    //title
   push();
-  translate(1600,0);
+  translate(1000,0);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of L Breweries',450,680);
+  text('No. of L Breweries',350,680);
   //axis
   textSize(15);
   stroke(255);
   strokeWeight(1);  
-  var ystart= 700;
-  var yend= 1200;
-  var ytotal= ystart + yend;
-  var xstart=150;
-  var xend= 600;
-  //yaxis
+
+    //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
   line(xstart,yend,(yend-ystart+250),yend);
   push();
-  translate(50,950);
+  translate(90,850);
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
@@ -479,10 +470,10 @@ function draw() {
   var Yaxis= [0,1000,2000,3000,4000,5000,6000];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],120,1200-500/7*i)
+    text(Yaxis[i],120,yend-(yend-ystart)/7*i)
   };
   for (var i =0; i<year.length; i++) {
-    text(year[i],(xstart+xend/12*(i+1)),1230)
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
   };
     stroke(0,255,0);
     fill(0,255,0);
@@ -506,7 +497,39 @@ function draw() {
 
   //plot XL//
   push();
-  translate(0,0);
+  translate(1500,0);
+  textSize(30);
+  textFont(Aller_Bd);
+  textAlign(CENTER);
+  noStroke();
+  text('No. of XL Breweries',350,680);
+  //axis
+  textSize(15);
+  stroke(255);
+  strokeWeight(1);  
+
+    //yaxis
+  line(xstart,ystart,xstart,yend);
+  //xaxis
+  line(xstart,yend,(yend-ystart+250),yend);
+  push();
+  translate(90,850);
+  angleMode(DEGREES);
+  rotate(-90);
+  noStroke();
+  text('Number',0,0);
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  text('Year',450,1280);
+  var Yaxis= [0,1000,2000,3000,4000,5000,6000];
+  textFont(Aller_Lt);
+  for (var i =0; i<Yaxis.length; i++) {
+    text(Yaxis[i],120,yend-(yend-ystart)/7*i)
+  };
+  for (var i =0; i<year.length; i++) {
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+  };
   stroke(0,0,255);
   fill(0,0,255);
   var XL0= ytotal-map(noXL[0],0,7000,ystart,yend);
