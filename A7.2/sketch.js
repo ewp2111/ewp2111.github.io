@@ -220,12 +220,13 @@ function draw() {
   var rice = table.getColumn("rice");
   var hop = table.getColumn("hop");
   var hopextract = table.getColumn("hopextract");
-  var hoprate = table.getColumn("hoprate");
-  var hopacreage = table.getColumn("hopacreage");
-  var aromahop = table.getColumn("aromahop");
-  var hopvariety = table.getColumn("hopvariety");
-  var hopincrease = table.getColumn("hopincrease");
+  var HR = table.getColumn("hoprate");
+  var HA = table.getColumn("hopacreage");
+  var AH = table.getColumn("aromahop");
+  var HV = table.getColumn("hopvariety");
+  var HI = table.getColumn("hopincrease");
   var year = table.getColumn("year");
+  var prod = table.getColumn("production");
 
 
 
@@ -289,6 +290,7 @@ function draw() {
 
 
 //Production
+console.log(prod);
   var ystart= 700;
   var yend= 1000;
   var ytotal= ystart + yend;
@@ -313,32 +315,32 @@ function draw() {
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
-  text('Number',0,0);
+  text('Million Barrels',0,0);
   pop();
   noStroke();
   textAlign(CENTER);
   text('Year',850,1050);
-  var Yaxis= [0,100];
+  var Yaxis= [0,100,200];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],620,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],620,yend-(yend-ystart)/3*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
-  var M0= ytotal-map(noM[0],0,200,ystart,yend);
-  var M1= ytotal-map(noM[1],0,200,ystart,yend);
-  var M2= ytotal-map(noM[2],0,200,ystart,yend);
-  var M3= ytotal-map(noM[3],0,200,ystart,yend);
-  var M4= ytotal-map(noM[4],0,200,ystart,yend);
-  var M5= ytotal-map(noM[5],0,200,ystart,yend);
-  var M6= ytotal-map(noM[6],0,200,ystart,yend);
-  var M7= ytotal-map(noM[7],0,200,ystart,yend);
-  var M8= ytotal-map(noM[8],0,200,ystart,yend);
-  var M9= ytotal-map(noM[9],0,200,ystart,yend);
-  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M0= ytotal-map(prod[0],0,300000000,ystart,yend);
+  var M1= ytotal-map(prod[1],0,300000000,ystart,yend);
+  var M2= ytotal-map(prod[2],0,300000000,ystart,yend);
+  var M3= ytotal-map(prod[3],0,300000000,ystart,yend);
+  var M4= ytotal-map(prod[4],0,300000000,ystart,yend);
+  var M5= ytotal-map(prod[5],0,300000000,ystart,yend);
+  var M6= ytotal-map(prod[6],0,300000000,ystart,yend);
+  var M7= ytotal-map(prod[7],0,300000000,ystart,yend);
+  var M8= ytotal-map(prod[8],0,300000000,ystart,yend);
+  var M9= ytotal-map(prod[9],0,300000000,ystart,yend);
+  var M10= ytotal-map(prod[10],0,300000000,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
@@ -372,32 +374,32 @@ function draw() {
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
-  text('Number',0,0);
+  text('Billion Pounds',0,0);
   pop();
   noStroke();
   textAlign(CENTER);
   text('Year',350,1050);
-  var Yaxis= [0,100];
+  var Yaxis= [0,1,2,3,4,5];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],1120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1120,yend-(yend-ystart)/6*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
-  var M0= ytotal-map(noM[0],0,200,ystart,yend);
-  var M1= ytotal-map(noM[1],0,200,ystart,yend);
-  var M2= ytotal-map(noM[2],0,200,ystart,yend);
-  var M3= ytotal-map(noM[3],0,200,ystart,yend);
-  var M4= ytotal-map(noM[4],0,200,ystart,yend);
-  var M5= ytotal-map(noM[5],0,200,ystart,yend);
-  var M6= ytotal-map(noM[6],0,200,ystart,yend);
-  var M7= ytotal-map(noM[7],0,200,ystart,yend);
-  var M8= ytotal-map(noM[8],0,200,ystart,yend);
-  var M9= ytotal-map(noM[9],0,200,ystart,yend);
-  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M0= ytotal-map(malt[0],0,6000000000,ystart,yend);
+  var M1= ytotal-map(malt[1],0,6000000000,ystart,yend);
+  var M2= ytotal-map(malt[2],0,6000000000,ystart,yend);
+  var M3= ytotal-map(malt[3],0,6000000000,ystart,yend);
+  var M4= ytotal-map(malt[4],0,6000000000,ystart,yend);
+  var M5= ytotal-map(malt[5],0,6000000000,ystart,yend);
+  var M6= ytotal-map(malt[6],0,6000000000,ystart,yend);
+  var M7= ytotal-map(malt[7],0,6000000000,ystart,yend);
+  var M8= ytotal-map(malt[8],0,6000000000,ystart,yend);
+  var M9= ytotal-map(malt[9],0,6000000000,ystart,yend);
+  var M10= ytotal-map(malt[10],0,6000000000,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
@@ -430,32 +432,32 @@ function draw() {
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
-  text('Number',0,0);
+  text('Billion Pounds',0,0);
   pop();
   noStroke();
   textAlign(CENTER);
   text('Year',350,1050);
-  var Yaxis= [0,100];
+  var Yaxis= [0,0.2,0.4,0.6,0.8];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],1620,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1620,yend-(yend-ystart)/5*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
-  var M0= ytotal-map(noM[0],0,200,ystart,yend);
-  var M1= ytotal-map(noM[1],0,200,ystart,yend);
-  var M2= ytotal-map(noM[2],0,200,ystart,yend);
-  var M3= ytotal-map(noM[3],0,200,ystart,yend);
-  var M4= ytotal-map(noM[4],0,200,ystart,yend);
-  var M5= ytotal-map(noM[5],0,200,ystart,yend);
-  var M6= ytotal-map(noM[6],0,200,ystart,yend);
-  var M7= ytotal-map(noM[7],0,200,ystart,yend);
-  var M8= ytotal-map(noM[8],0,200,ystart,yend);
-  var M9= ytotal-map(noM[9],0,200,ystart,yend);
-  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M0= ytotal-map(rice[0],0,1000000000,ystart,yend);
+  var M1= ytotal-map(rice[1],0,1000000000,ystart,yend);
+  var M2= ytotal-map(rice[2],0,1000000000,ystart,yend);
+  var M3= ytotal-map(rice[3],0,1000000000,ystart,yend);
+  var M4= ytotal-map(rice[4],0,1000000000,ystart,yend);
+  var M5= ytotal-map(rice[5],0,1000000000,ystart,yend);
+  var M6= ytotal-map(rice[6],0,1000000000,ystart,yend);
+  var M7= ytotal-map(rice[7],0,1000000000,ystart,yend);
+  var M8= ytotal-map(rice[8],0,1000000000,ystart,yend);
+  var M9= ytotal-map(rice[9],0,1000000000,ystart,yend);
+  var M10= ytotal-map(rice[10],0,1000000000,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
@@ -527,6 +529,7 @@ function draw() {
 
 
 //hop rate 
+// console.log(HR);
   var ystart= 1200;
   var yend= 1500;
   var ytotal= ystart + yend;
@@ -551,12 +554,12 @@ function draw() {
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
-  text('Number',0,0);
+  text('TTL Pounds / TTL BBL',0,0);
   pop();
   noStroke();
   textAlign(CENTER);
   text('Year',850,1550);
-  var Yaxis= [0,100];
+  var Yaxis= [0,1];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
     text(Yaxis[i],620,yend-(yend-ystart)/2*i)
@@ -566,21 +569,21 @@ function draw() {
   };
     stroke(255);
     fill(255);
-  var M0= ytotal-map(noM[0],0,200,ystart,yend);
-  var M1= ytotal-map(noM[1],0,200,ystart,yend);
-  var M2= ytotal-map(noM[2],0,200,ystart,yend);
-  var M3= ytotal-map(noM[3],0,200,ystart,yend);
-  var M4= ytotal-map(noM[4],0,200,ystart,yend);
-  var M5= ytotal-map(noM[5],0,200,ystart,yend);
-  var M6= ytotal-map(noM[6],0,200,ystart,yend);
-  var M7= ytotal-map(noM[7],0,200,ystart,yend);
-  var M8= ytotal-map(noM[8],0,200,ystart,yend);
-  var M9= ytotal-map(noM[9],0,200,ystart,yend);
-  var M10= ytotal-map(noM[10],0,200,ystart,yend);
-  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
-  for (var i =0;i< M.length; i++) {
-    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
-    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
+  var HR0= ytotal-map(HR[0],0,2,ystart,yend);
+  var HR1= ytotal-map(HR[1],0,2,ystart,yend);
+  var HR2= ytotal-map(HR[2],0,2,ystart,yend);
+  var HR3= ytotal-map(HR[3],0,2,ystart,yend);
+  var HR4= ytotal-map(HR[4],0,2,ystart,yend);
+  var HR5= ytotal-map(HR[5],0,2,ystart,yend);
+  var HR6= ytotal-map(HR[6],0,2,ystart,yend);
+  var HR7= ytotal-map(HR[7],0,2,ystart,yend);
+  var HR8= ytotal-map(HR[8],0,2,ystart,yend);
+  var HR9= ytotal-map(HR[9],0,2,ystart,yend);
+  var HR10= ytotal-map(HR[10],0,2,ystart,yend);
+  var HR = [HR0,HR1,HR2,HR3,HR4,HR5,HR6,HR7,HR8,HR9,HR10];
+  for (var i =0;i< HR.length; i++) {
+    line(xstart+(xend-xstart)/12*(i+1),HR[i],xstart+(xend-xstart)/12*(i+2),HR[i+1]);
+    ellipse(xstart+(xend-xstart)/12*(i+1),HR[i],5,5);
   };
 
 
@@ -610,32 +613,32 @@ function draw() {
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
-  text('Number',0,0);
+  text('Acreage',0,0);
   pop();
   noStroke();
   textAlign(CENTER);
   text('Year',350,1050);
-  var Yaxis= [0,100];
+  var Yaxis= [0,10000,20000,30000,40000,50000,60000];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],1120,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1120,yend-(yend-ystart)/7*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
-  var M0= ytotal-map(noM[0],0,200,ystart,yend);
-  var M1= ytotal-map(noM[1],0,200,ystart,yend);
-  var M2= ytotal-map(noM[2],0,200,ystart,yend);
-  var M3= ytotal-map(noM[3],0,200,ystart,yend);
-  var M4= ytotal-map(noM[4],0,200,ystart,yend);
-  var M5= ytotal-map(noM[5],0,200,ystart,yend);
-  var M6= ytotal-map(noM[6],0,200,ystart,yend);
-  var M7= ytotal-map(noM[7],0,200,ystart,yend);
-  var M8= ytotal-map(noM[8],0,200,ystart,yend);
-  var M9= ytotal-map(noM[9],0,200,ystart,yend);
-  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M0= ytotal-map(HA[0],0,70000,ystart,yend);
+  var M1= ytotal-map(HA[1],0,70000,ystart,yend);
+  var M2= ytotal-map(HA[2],0,70000,ystart,yend);
+  var M3= ytotal-map(HA[3],0,70000,ystart,yend);
+  var M4= ytotal-map(HA[4],0,70000,ystart,yend);
+  var M5= ytotal-map(HA[5],0,70000,ystart,yend);
+  var M6= ytotal-map(HA[6],0,70000,ystart,yend);
+  var M7= ytotal-map(HA[7],0,70000,ystart,yend);
+  var M8= ytotal-map(HA[8],0,70000,ystart,yend);
+  var M9= ytotal-map(HA[9],0,70000,ystart,yend);
+  var M10= ytotal-map(HA[10],0,70000,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
@@ -673,27 +676,27 @@ function draw() {
   noStroke();
   textAlign(CENTER);
   text('Year',350,1050);
-  var Yaxis= [0,100];
+  var Yaxis= [0,100,200];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],1620,yend-(yend-ystart)/2*i)
+    text(Yaxis[i],1620,yend-(yend-ystart)/3*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
     stroke(255);
     fill(255);
-  var M0= ytotal-map(noM[0],0,200,ystart,yend);
-  var M1= ytotal-map(noM[1],0,200,ystart,yend);
-  var M2= ytotal-map(noM[2],0,200,ystart,yend);
-  var M3= ytotal-map(noM[3],0,200,ystart,yend);
-  var M4= ytotal-map(noM[4],0,200,ystart,yend);
-  var M5= ytotal-map(noM[5],0,200,ystart,yend);
-  var M6= ytotal-map(noM[6],0,200,ystart,yend);
-  var M7= ytotal-map(noM[7],0,200,ystart,yend);
-  var M8= ytotal-map(noM[8],0,200,ystart,yend);
-  var M9= ytotal-map(noM[9],0,200,ystart,yend);
-  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M0= ytotal-map(HV[0],0,300,ystart,yend);
+  var M1= ytotal-map(HV[1],0,300,ystart,yend);
+  var M2= ytotal-map(HV[2],0,300,ystart,yend);
+  var M3= ytotal-map(HV[3],0,300,ystart,yend);
+  var M4= ytotal-map(HV[4],0,300,ystart,yend);
+  var M5= ytotal-map(HV[5],0,300,ystart,yend);
+  var M6= ytotal-map(HV[6],0,300,ystart,yend);
+  var M7= ytotal-map(HV[7],0,300,ystart,yend);
+  var M8= ytotal-map(HV[8],0,300,ystart,yend);
+  var M9= ytotal-map(HV[9],0,300,ystart,yend);
+  var M10= ytotal-map(HV[10],0,300,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
   for (var i =0;i< M.length; i++) {
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
