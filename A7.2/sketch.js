@@ -289,6 +289,175 @@ function draw() {
   pop();
 
 
+//Production 
+//title
+  push();
+  translate(500,0);
+  textSize(30);
+  textFont(Aller_Bd);
+  textAlign(CENTER);
+  noStroke();
+  text('Production',350,680);
+  //axis
+  textSize(12);
+  stroke(255);
+  strokeWeight(1);  
+  //yaxis
+  line(xstart,ystart,xstart,yend);
+  //xaxis
+  line(xstart,yend,(yend-ystart+250),yend);
+  push();
+  translate(90,850);
+  angleMode(DEGREES);
+  rotate(-90);
+  noStroke();
+  text('Number',0,0);
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  text('Year',350,1050);
+  var Yaxis= [0,100];
+  textFont(Aller_Lt);
+  for (var i =0; i<Yaxis.length; i++) {
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+  };
+  for (var i =0; i<year.length; i++) {
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+  };
+    stroke(255);
+    fill(255);
+  var M0= ytotal-map(noM[0],0,200,ystart,yend);
+  var M1= ytotal-map(noM[1],0,200,ystart,yend);
+  var M2= ytotal-map(noM[2],0,200,ystart,yend);
+  var M3= ytotal-map(noM[3],0,200,ystart,yend);
+  var M4= ytotal-map(noM[4],0,200,ystart,yend);
+  var M5= ytotal-map(noM[5],0,200,ystart,yend);
+  var M6= ytotal-map(noM[6],0,200,ystart,yend);
+  var M7= ytotal-map(noM[7],0,200,ystart,yend);
+  var M8= ytotal-map(noM[8],0,200,ystart,yend);
+  var M9= ytotal-map(noM[9],0,200,ystart,yend);
+  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+  for (var i =0;i< M.length; i++) {
+    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
+    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+  };
+  pop();
+
+
+
+//Malt Consumption 
+//title
+  push();
+  translate(1000,0);
+  textSize(30);
+  textFont(Aller_Bd);
+  textAlign(CENTER);
+  noStroke();
+  text('Malt Consumption',350,680);
+  //axis
+  textSize(12);
+  stroke(255);
+  strokeWeight(1);  
+  //yaxis
+  line(xstart,ystart,xstart,yend);
+  //xaxis
+  line(xstart,yend,(yend-ystart+250),yend);
+  push();
+  translate(90,850);
+  angleMode(DEGREES);
+  rotate(-90);
+  noStroke();
+  text('Number',0,0);
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  text('Year',350,1050);
+  var Yaxis= [0,100];
+  textFont(Aller_Lt);
+  for (var i =0; i<Yaxis.length; i++) {
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+  };
+  for (var i =0; i<year.length; i++) {
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+  };
+    stroke(255);
+    fill(255);
+  var M0= ytotal-map(noM[0],0,200,ystart,yend);
+  var M1= ytotal-map(noM[1],0,200,ystart,yend);
+  var M2= ytotal-map(noM[2],0,200,ystart,yend);
+  var M3= ytotal-map(noM[3],0,200,ystart,yend);
+  var M4= ytotal-map(noM[4],0,200,ystart,yend);
+  var M5= ytotal-map(noM[5],0,200,ystart,yend);
+  var M6= ytotal-map(noM[6],0,200,ystart,yend);
+  var M7= ytotal-map(noM[7],0,200,ystart,yend);
+  var M8= ytotal-map(noM[8],0,200,ystart,yend);
+  var M9= ytotal-map(noM[9],0,200,ystart,yend);
+  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+  for (var i =0;i< M.length; i++) {
+    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
+    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+  };
+  pop();
+
+
+  //Rice Consumption 
+  //title
+  push();
+  translate(1500,0);
+  textSize(30);
+  textFont(Aller_Bd);
+  textAlign(CENTER);
+  noStroke();
+  text('Rice Consumption',350,680);
+  //axis
+  textSize(12);
+  stroke(255);
+  strokeWeight(1);  
+  //yaxis
+  line(xstart,ystart,xstart,yend);
+  //xaxis
+  line(xstart,yend,(yend-ystart+250),yend);
+  push();
+  translate(90,850);
+  angleMode(DEGREES);
+  rotate(-90);
+  noStroke();
+  text('Number',0,0);
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  text('Year',350,1050);
+  var Yaxis= [0,100];
+  textFont(Aller_Lt);
+  for (var i =0; i<Yaxis.length; i++) {
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+  };
+  for (var i =0; i<year.length; i++) {
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+  };
+    stroke(255);
+    fill(255);
+  var M0= ytotal-map(noM[0],0,200,ystart,yend);
+  var M1= ytotal-map(noM[1],0,200,ystart,yend);
+  var M2= ytotal-map(noM[2],0,200,ystart,yend);
+  var M3= ytotal-map(noM[3],0,200,ystart,yend);
+  var M4= ytotal-map(noM[4],0,200,ystart,yend);
+  var M5= ytotal-map(noM[5],0,200,ystart,yend);
+  var M6= ytotal-map(noM[6],0,200,ystart,yend);
+  var M7= ytotal-map(noM[7],0,200,ystart,yend);
+  var M8= ytotal-map(noM[8],0,200,ystart,yend);
+  var M9= ytotal-map(noM[9],0,200,ystart,yend);
+  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+  for (var i =0;i< M.length; i++) {
+    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
+    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+  };
+  pop();
+
+
 
 
 //hop consumption
@@ -349,6 +518,176 @@ function draw() {
   for (var i =0;i< S.length; i++) {
     line(xstart+xend/12*(i+1),S[i],xstart+xend/12*(i+2),S[i+1]);
     ellipse(xstart+xend/12*(i+1),S[i],5,5);
+  };
+  pop();
+
+
+
+//hop rate 
+//title
+  push();
+  translate(500,500);
+  textSize(30);
+  textFont(Aller_Bd);
+  textAlign(CENTER);
+  noStroke();
+  text('Hop Rate',350,680);
+  //axis
+  textSize(12);
+  stroke(255);
+  strokeWeight(1);  
+  //yaxis
+  line(xstart,ystart,xstart,yend);
+  //xaxis
+  line(xstart,yend,(yend-ystart+250),yend);
+  push();
+  translate(90,850);
+  angleMode(DEGREES);
+  rotate(-90);
+  noStroke();
+  text('Number',0,0);
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  text('Year',350,1050);
+  var Yaxis= [0,100];
+  textFont(Aller_Lt);
+  for (var i =0; i<Yaxis.length; i++) {
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+  };
+  for (var i =0; i<year.length; i++) {
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+  };
+    stroke(255);
+    fill(255);
+  var M0= ytotal-map(noM[0],0,200,ystart,yend);
+  var M1= ytotal-map(noM[1],0,200,ystart,yend);
+  var M2= ytotal-map(noM[2],0,200,ystart,yend);
+  var M3= ytotal-map(noM[3],0,200,ystart,yend);
+  var M4= ytotal-map(noM[4],0,200,ystart,yend);
+  var M5= ytotal-map(noM[5],0,200,ystart,yend);
+  var M6= ytotal-map(noM[6],0,200,ystart,yend);
+  var M7= ytotal-map(noM[7],0,200,ystart,yend);
+  var M8= ytotal-map(noM[8],0,200,ystart,yend);
+  var M9= ytotal-map(noM[9],0,200,ystart,yend);
+  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+  for (var i =0;i< M.length; i++) {
+    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
+    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+  };
+  pop();
+
+
+
+//hop acreage 
+//title
+  push();
+  translate(1000,500);
+  textSize(30);
+  textFont(Aller_Bd);
+  textAlign(CENTER);
+  noStroke();
+  text('Hop Acreage',350,680);
+  //axis
+  textSize(12);
+  stroke(255);
+  strokeWeight(1);  
+  //yaxis
+  line(xstart,ystart,xstart,yend);
+  //xaxis
+  line(xstart,yend,(yend-ystart+250),yend);
+  push();
+  translate(90,850);
+  angleMode(DEGREES);
+  rotate(-90);
+  noStroke();
+  text('Number',0,0);
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  text('Year',350,1050);
+  var Yaxis= [0,100];
+  textFont(Aller_Lt);
+  for (var i =0; i<Yaxis.length; i++) {
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+  };
+  for (var i =0; i<year.length; i++) {
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+  };
+    stroke(255);
+    fill(255);
+  var M0= ytotal-map(noM[0],0,200,ystart,yend);
+  var M1= ytotal-map(noM[1],0,200,ystart,yend);
+  var M2= ytotal-map(noM[2],0,200,ystart,yend);
+  var M3= ytotal-map(noM[3],0,200,ystart,yend);
+  var M4= ytotal-map(noM[4],0,200,ystart,yend);
+  var M5= ytotal-map(noM[5],0,200,ystart,yend);
+  var M6= ytotal-map(noM[6],0,200,ystart,yend);
+  var M7= ytotal-map(noM[7],0,200,ystart,yend);
+  var M8= ytotal-map(noM[8],0,200,ystart,yend);
+  var M9= ytotal-map(noM[9],0,200,ystart,yend);
+  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+  for (var i =0;i< M.length; i++) {
+    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
+    ellipse(xstart+xend/12*(i+1),M[i],5,5);
+  };
+  pop();
+
+
+  //hop variety 
+  //title
+  push();
+  translate(1500,500);
+  textSize(30);
+  textFont(Aller_Bd);
+  textAlign(CENTER);
+  noStroke();
+  text('Hop Variety',350,680);
+  //axis
+  textSize(12);
+  stroke(255);
+  strokeWeight(1);  
+  //yaxis
+  line(xstart,ystart,xstart,yend);
+  //xaxis
+  line(xstart,yend,(yend-ystart+250),yend);
+  push();
+  translate(90,850);
+  angleMode(DEGREES);
+  rotate(-90);
+  noStroke();
+  text('Number',0,0);
+  pop();
+  noStroke();
+  textAlign(CENTER);
+  text('Year',350,1050);
+  var Yaxis= [0,100];
+  textFont(Aller_Lt);
+  for (var i =0; i<Yaxis.length; i++) {
+    text(Yaxis[i],120,yend-(yend-ystart)/2*i)
+  };
+  for (var i =0; i<year.length; i++) {
+    text(year[i],(xstart+xend/12*(i+1)),yend+20)
+  };
+    stroke(255);
+    fill(255);
+  var M0= ytotal-map(noM[0],0,200,ystart,yend);
+  var M1= ytotal-map(noM[1],0,200,ystart,yend);
+  var M2= ytotal-map(noM[2],0,200,ystart,yend);
+  var M3= ytotal-map(noM[3],0,200,ystart,yend);
+  var M4= ytotal-map(noM[4],0,200,ystart,yend);
+  var M5= ytotal-map(noM[5],0,200,ystart,yend);
+  var M6= ytotal-map(noM[6],0,200,ystart,yend);
+  var M7= ytotal-map(noM[7],0,200,ystart,yend);
+  var M8= ytotal-map(noM[8],0,200,ystart,yend);
+  var M9= ytotal-map(noM[9],0,200,ystart,yend);
+  var M10= ytotal-map(noM[10],0,200,ystart,yend);
+  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+  for (var i =0;i< M.length; i++) {
+    line(xstart+xend/12*(i+1),M[i],xstart+xend/12*(i+2),M[i+1]);
+    ellipse(xstart+xend/12*(i+1),M[i],5,5);
   };
   pop();
 
