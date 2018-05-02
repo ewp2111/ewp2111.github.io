@@ -42,7 +42,7 @@ function draw() {
     && mouseY>160
     && mouseY<200 ) {
     fill(230);
-    rect(40,160,350,400);
+    rect(40,160,350,360);
     fill(200);
     rect(40,160,350,40)
   } else if (mouseX >40
@@ -50,7 +50,7 @@ function draw() {
     && mouseY>200
     && mouseY<240 ) {
     fill(230);
-    rect(40,160,350,400);
+    rect(40,160,350,360);
     fill(200);
     rect(40,200,350,40);
   } else if (mouseX >40
@@ -58,7 +58,7 @@ function draw() {
     && mouseY>240
     && mouseY<280 ) {
     fill(230);
-    rect(40,160,350,400);
+    rect(40,160,350,360);
     fill(200);
     rect(40,240,350,40);
   } else if (mouseX >40
@@ -66,7 +66,7 @@ function draw() {
     && mouseY>280
     && mouseY<320 ) {
     fill(230);
-    rect(40,160,350,400);
+    rect(40,160,350,360);
     fill(200);
     rect(40,280,350,40);
  } else if (mouseX >40
@@ -74,7 +74,7 @@ function draw() {
     && mouseY>380
     && mouseY<420 ) {
     fill(230);
-    rect(40,160,350,400);
+    rect(40,160,350,360);
     fill(200);
     rect(40,380,350,40);
  } else if (mouseX >40
@@ -82,7 +82,7 @@ function draw() {
     && mouseY>420
     && mouseY<460 ) {
     fill(230);
-    rect(40,160,350,400);
+    rect(40,160,350,360);
     fill(200);
     rect(40,420,350,40);
   } else if (mouseX >40
@@ -90,12 +90,12 @@ function draw() {
     && mouseY>460
     && mouseY<500 ) {
     fill(230);
-    rect(40,160,350,400);
+    rect(40,160,350,360);
     fill(200);
     rect(40,460,350,40);
   } else {
     fill(230);
-    rect(40,160,350,400);
+    rect(40,160,350,360);
   };
   //text and image//
   fill(100);
@@ -396,7 +396,7 @@ function draw() {
 //beer sales
   //title
   if (state!=0){
-  fill(230);
+  fill(100);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
@@ -440,12 +440,25 @@ function draw() {
     fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
-    fill(230);
+    fill(100);
     strokeWeight(1);
     textSize(12);
     stroke(100);
     var Yaxis= [0,200,400,600];
-    textFont(Aller_Lt);
+    textFont(Aller_Lt);    
+    noStroke();
+    fill(230);
+    rect(130,530,480,100);
+    triangle(150,630,170,630,160,670);
+    fill(151,99,46);
+    rect(130,530,480,100,15,15,15,15);
+    triangle(150,630,170,630,160,670);
+    fill(255);
+    textSize(30);
+    text('IPA is dominating craft beer market in recent years!',140,540,460,80);
+    fill(100);
+    textSize(12);
+    stroke(100);
     for (var i =0; i<Yaxis.length; i++) {
       text(Yaxis[i],120,yend-(yend-ystart)/4*i)
     };
@@ -490,9 +503,9 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==2){
-        fill(230);
+    fill(230);
     rect(70,650,560,45);
-      fill(202,155,53);
+    fill(202,155,53);
     textSize(30);
     textFont(Aller_Bd);
     textAlign(CENTER);
@@ -500,8 +513,19 @@ function draw() {
     fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
+    noStroke();
     fill(230);
-        textSize(12);
+    rect(130,530,480,100);
+    triangle(150,630,170,630,160,670);
+    fill(202,155,53);
+    rect(130,530,330,100,15,15,15,15);
+    triangle(150,630,170,630,160,670);
+    fill(255);
+    textSize(30);
+    textFont(Aller_Lt);
+    text('Pale Ale is getting more popular!',140,540,300,80);
+    fill(100);
+    textSize(12);
     stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
@@ -556,11 +580,22 @@ function draw() {
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Amber sales',350,680);
-        fill(230);
+    fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
+    noStroke();
     fill(230);
-        textSize(12);
+    rect(130,530,480,100);
+    triangle(150,630,170,630,160,670);
+    fill(117,66,42);
+    rect(130,530,330,100,15,15,15,15);
+    triangle(150,630,170,630,160,670);
+    fill(255);
+    textSize(30);
+    textFont(Aller_Lt);
+    text('Amber is the 3rd most popular beer',140,540,300,80);
+    fill(100);
+    textSize(12);
     stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
@@ -616,11 +651,22 @@ function draw() {
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Stout sales',350,680);
-        fill(230);
+    fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
+    noStroke();
+    fill(230);
+    rect(130,530,480,100);
+    triangle(150,630,170,630,160,670);
+    fill(55,36,36);
+    rect(130,530,300,100,15,15,15,15);
+    triangle(150,630,170,630,160,670);
+    fill(255);
+    textSize(30);
+    textFont(Aller_Lt);
+    text('Stout is relatively less popular',140,540,270,80);
     fill(100);
-        textSize(12);
+    textSize(12);
     stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
@@ -678,6 +724,17 @@ function draw() {
         fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
+    noStroke();
+    fill(230);
+    rect(130,530,480,100);
+    triangle(150,630,170,630,160,670);
+    fill(169,134,58);
+    rect(130,530,340,100,15,15,15,15);
+    triangle(150,630,170,630,160,670);
+    fill(255);
+    textSize(30);
+    textFont(Aller_Lt);
+    text('Pilsner is not very popular in recent years',140,540,330,80);
     fill(100);
         textSize(12);
     stroke(100);
@@ -734,9 +791,20 @@ function draw() {
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Light sales',350,680);
-        fill(230);
+    fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
+    noStroke();
+    fill(230);
+    rect(130,530,480,100);
+    triangle(150,630,170,630,160,670);
+    fill(228,185,75);
+    rect(130,530,340,100,15,15,15,15);
+    triangle(150,630,170,630,160,670);
+    fill(255);
+    textSize(30);
+    textFont(Aller_Lt);
+    text('Light beer is getting less popular...',140,540,330,80);
     fill(100);
         textSize(12);
     stroke(100);
@@ -788,13 +856,24 @@ function draw() {
     fill(230);
     rect(70,650,560,45);
       fill(211,113,87);
-    textSize(30);
+    textSize(25);
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Fruit/Vegetable/Spice Beer sales',350,680);
         fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
+    noStroke();
+    fill(230);
+    rect(130,530,480,100);
+    triangle(150,630,170,630,160,670);
+      fill(211,113,87);
+    rect(130,530,340,100,15,15,15,15);
+    triangle(150,630,170,630,160,670);
+    fill(255);
+    textSize(30);
+    textFont(Aller_Lt);
+    text('Consumers are into creative beer styles!',140,540,330,80);
     fill(100);
         textSize(12);
     stroke(100);
@@ -1392,6 +1471,7 @@ if (state!=0){
   text('Acreage',0,0);
   pop();
   noStroke();
+  fill(100);
   textAlign(CENTER);
   text('Year',1350,1550);
   fill(100);
@@ -1437,9 +1517,11 @@ if (state!=0){
     noStroke();
     rect(1400,1400,150,75,10,10,10,10);
     rect(2100,1100,500,350,20,20,20,20);
-    stroke(255,0,0);
-    strokeWeight(1);
-    line(1350,1330,1500,1230);
+    // stroke(255,0,0);
+    // strokeWeight(1);
+    // line(1350,1330,1500,1230);
+    // line(1500,1230,1482,1230);
+    // line(1500,1230,1492,1246);
     fill(255);
     noStroke();
     textSize(15);
@@ -1540,9 +1622,9 @@ if (state!=0){
     fill(165,180,64);
     noStroke();
     rect(1900,1400,150,75,10,10,10,10);
-    stroke(255,0,0);
-    strokeWeight(1);
-    line(1850,1330,2000,1230);
+    // stroke(255,0,0);
+    // strokeWeight(1);
+    // line(1850,1330,2000,1230);
     fill(255);
     noStroke();
     textSize(15);
