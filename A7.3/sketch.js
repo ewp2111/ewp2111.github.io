@@ -134,7 +134,7 @@ function draw() {
   var malthop = 'Malt Level\n\nHop Level'
   //ipa
   if (state == 1){
-    fill(200);
+    fill(150);
     noStroke();
     rect(520,50,700,500,50,50,50,50);
     fill(50);

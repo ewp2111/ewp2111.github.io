@@ -21,18 +21,17 @@ function preload() {
 
 function setup() {
   createCanvas(Width, Height);
-  background (150);
+  background (230);
   frameRate(30);
   // noLoop();
 }
 
 function draw() {
-  fill(0);
   textAlign(LEFT);
   textFont(Aller_Bd);
   textSize(30);
   //select fav beer//
-  fill(255);
+  fill(100);
     noStroke();
   text('Select Favorite Beer',80,100);
   triangle(50,80,70,80,60,100);
@@ -42,64 +41,64 @@ function draw() {
     && mouseX <390
     && mouseY>160
     && mouseY<200 ) {
-    fill(150);
+    fill(230);
     rect(40,160,350,400);
-    fill(100);
+    fill(200);
     rect(40,160,350,40)
   } else if (mouseX >40
     && mouseX <390
     && mouseY>200
     && mouseY<240 ) {
-    fill(150);
+    fill(230);
     rect(40,160,350,400);
-    fill(100);
+    fill(200);
     rect(40,200,350,40);
   } else if (mouseX >40
     && mouseX <390
     && mouseY>240
     && mouseY<280 ) {
-    fill(150);
+    fill(230);
     rect(40,160,350,400);
-    fill(100);
+    fill(200);
     rect(40,240,350,40);
   } else if (mouseX >40
     && mouseX <390
     && mouseY>280
     && mouseY<320 ) {
-    fill(150);
+    fill(230);
     rect(40,160,350,400);
-    fill(100);
+    fill(200);
     rect(40,280,350,40);
  } else if (mouseX >40
     && mouseX <390
     && mouseY>380
     && mouseY<420 ) {
-    fill(150);
+    fill(230);
     rect(40,160,350,400);
-    fill(100);
+    fill(200);
     rect(40,380,350,40);
  } else if (mouseX >40
     && mouseX <390
     && mouseY>420
     && mouseY<460 ) {
-    fill(150);
+    fill(230);
     rect(40,160,350,400);
-    fill(100);
+    fill(200);
     rect(40,420,350,40);
   } else if (mouseX >40
     && mouseX <390
     && mouseY>460
     && mouseY<500 ) {
-    fill(150);
+    fill(230);
     rect(40,160,350,400);
-    fill(100);
+    fill(200);
     rect(40,460,350,40);
   } else {
-    fill(150);
+    fill(230);
     rect(40,160,350,400);
   };
   //text and image//
-  fill(255);
+  fill(100);
   textSize(30);
   textFont(Aller_Rg);
   text('Ales',50,150);
@@ -134,8 +133,7 @@ function draw() {
   var malthop = 'Malt Level\n\nHop Level'
   //ipa
   if (state == 1){
-    fill(200);
-    noStroke();
+    fill(230);
     rect(520,50,700,500,50,50,50,50);
     fill(50);
     textFont(Aller_Bd);
@@ -154,7 +152,7 @@ function draw() {
     };
 
   } else if (state ==2){
-    fill(200);
+    fill(230);
     rect(520,50,700,500,50,50,50,50);
     fill(50);
     textFont(Aller_Bd);
@@ -172,7 +170,7 @@ function draw() {
     image(h,850+i*60,430,70,70)
     };
     } else if (state ==3){
-    fill(200);
+    fill(230);
     rect(520,50,700,500,50,50,50,50);
     fill(50);
     textFont(Aller_Bd);
@@ -190,7 +188,7 @@ function draw() {
     image(h,850+i*60,430,70,70)
     };
   } else if (state ==4){
-    fill(200);
+    fill(230);
     rect(520,50,700,500,50,50,50,50);
     fill(50);
     textFont(Aller_Bd);
@@ -208,7 +206,7 @@ function draw() {
     image(h,850+i*60,430,70,70)
     };
   } else if (state ==5){
-    fill(200);
+    fill(230);
     rect(520,50,700,500,50,50,50,50);
     fill(50);
     textFont(Aller_Bd);
@@ -226,7 +224,7 @@ function draw() {
     image(h,850+i*60,430,70,70)
     };
   } else if (state ==6){
-    fill(200);
+    fill(230);
     rect(520,50,700,500,50,50,50,50);
     fill(50);
     textFont(Aller_Bd);
@@ -244,7 +242,7 @@ function draw() {
     image(h,850+i*60,430,70,70)
     };
   } else if (state ==7){
-    fill(200);
+    fill(230);
     rect(520,50,700,500,50,50,50,50);
     fill(50);
     textFont(Aller_Bd);
@@ -263,7 +261,7 @@ function draw() {
     };
   };
 
-  fill(255);
+  fill(230);
   var noS = table.getColumn("noS");
   var noM = table.getColumn("noM");
   var noL = table.getColumn("noL");
@@ -291,7 +289,7 @@ function draw() {
   var Fruit = table.getColumn("fruit");
 
   if (state!=0){
-    fill(255);
+    fill(100);
     textAlign(CENTER);
    for (var k =0; k<year.length; k++) {
       text(year[k],1300+1500/12*(k+1),80);
@@ -359,7 +357,7 @@ function draw() {
       for (var j = 0; j < Spt.length; j++) {
         if (mouseX>(xstart+(xend-xstart)/12*None[i]+Spt[j])
           && mouseX<xstart+(xend-xstart)/12*(None[i]+1)+Spt[j]){
-            fill(150);
+            fill(230);
             rect(1400,100,2000,500);
         };
       };
@@ -367,14 +365,14 @@ function draw() {
 
 
    //tax 2017
-   fill(0);
+   fill(100);
    textSize(30);
    text('Tax',1300,110);   
    rect(1400,100,1300,20);
    triangle(2700,100,2700,120,2750,110);
    fill(255);
    ellipse(1300+1500/12*11,110,20,20);
-   fill(0);
+   fill(100);
 
     //policy 
 
@@ -385,7 +383,7 @@ function draw() {
     fill(255);
     ellipse(1300+1500/12*6,160,20,20);
     //craft definition
-    fill(craftfill);    
+    fill(134,195,189);    
     text('Craft \ndefinition',1300,220);   
     rect(1400,200,1300,20);
     triangle(2700,200,2700,220,2750,210);
@@ -398,13 +396,13 @@ function draw() {
 //beer sales
   //title
   if (state!=0){
-  fill(255);
+  fill(230);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
   strokeWeight(1);  
   var ystart= 700;
   var yend= 1000;
@@ -431,21 +429,21 @@ function draw() {
 
 
   if (state ==1){
-    fill(150);
+    fill(230);
     rect(70,650,560,45);
-    fill(255);
+        fill(151,99,46);
     textSize(30);
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('IPA sales',350,680);
     textSize(12);
-    fill(150);
+    fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
-    fill(255);
+    fill(230);
     strokeWeight(1);
     textSize(12);
-    stroke(255);
+    stroke(100);
     var Yaxis= [0,200,400,600];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -469,14 +467,14 @@ function draw() {
     var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
     var Sp=[0,500,1000,1500];
     //toggle IPA
+          for (var j = 0; j < Sp.length; j++) {
     for (var i =0;i< S.length; i++) {
-      for (var j = 0; j < Sp.length; j++) {
         if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
         && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
         noStroke();
-        fill(150);
+        fill(230);
         rect(151,700,400,300);
-        stroke(255);
+        stroke(151,99,46,100);
         line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
         textSize(25);
         stroke(151,99,46);
@@ -492,19 +490,19 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==2){
-        fill(150);
+        fill(230);
     rect(70,650,560,45);
-        fill(255);
+      fill(202,155,53);
     textSize(30);
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Pale Ale sales',350,680);
-    fill(150);
+    fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
-    fill(255);
+    fill(230);
         textSize(12);
-    stroke(255);
+    stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -527,14 +525,14 @@ function draw() {
     var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
     var Sp=[0,500,1000,1500];
     //toggle Pale ale
+    for (var j = 0; j < Sp.length; j++) {
     for (var i =0;i< S.length; i++) {
-      for (var j = 0; j < Sp.length; j++) {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
-      fill(150);
-    noStroke();
+      fill(230);
+      noStroke();
       rect(151,700,400,300);
-      stroke(255);
+      stroke(202,155,53,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
       textSize(25);
       stroke(202,155,53);
@@ -551,19 +549,19 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==3){
-        fill(150);
+        fill(230);
     rect(70,650,560,45);
-        fill(255);
+    fill(117,66,42);
     textSize(30);
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Amber sales',350,680);
-        fill(150);
+        fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
-    fill(255);
+    fill(230);
         textSize(12);
-    stroke(255);
+    stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -586,14 +584,14 @@ function draw() {
     var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
        var Sp=[0,500,1000,1500];
     //toggle Amber
-    for (var i =0;i< S.length; i++) {
       for (var j = 0; j < Sp.length; j++) {
+    for (var i =0;i< S.length; i++) {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(151,700,400,300);
-      stroke(255);
+    stroke(117,66,42,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
       textSize(25);
     stroke(117,66,42);
@@ -611,19 +609,19 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==4){
-        fill(150);
+        fill(230);
     rect(70,650,560,45);
-        fill(255);
+    fill(55,36,36);
     textSize(30);
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Stout sales',350,680);
-        fill(150);
+        fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
-    fill(255);
+    fill(100);
         textSize(12);
-    stroke(255);
+    stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -646,14 +644,14 @@ function draw() {
     var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
     var Sp=[0,500,1000,1500];
     //toggle Stout
+          for (var j = 0; j < Sp.length; j++) {
     for (var i =0;i< S.length; i++) {
-      for (var j = 0; j < Sp.length; j++) {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(151,700,400,300);
-      stroke(255);
+      stroke(55,36,36,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
       textSize(25);
       stroke(55,36,36);
@@ -670,19 +668,19 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==5){
-        fill(150);
+        fill(230);
     rect(70,650,560,45);
-        fill(255);
+    fill(169,134,58);
     textSize(30);
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Pilsner sales',350,680);
-        fill(150);
+        fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
-    fill(255);
+    fill(100);
         textSize(12);
-    stroke(255);
+    stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -705,14 +703,14 @@ function draw() {
     var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
     var Sp=[0,500,1000,1500];
     //toggle pilsner
+          for (var j = 0; j < Sp.length; j++) {
     for (var i =0;i< S.length; i++) {
-      for (var j = 0; j < Sp.length; j++) {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(151,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
       textSize(25);
     stroke(169,134,58);
@@ -729,19 +727,19 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==6){
-        fill(150);
+        fill(230);
     rect(70,650,560,45);
-        fill(255);
+    fill(228,185,75);
     textSize(30);
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Light sales',350,680);
-        fill(150);
+        fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
-    fill(255);
+    fill(100);
         textSize(12);
-    stroke(255);
+    stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -763,14 +761,14 @@ function draw() {
     var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
     var Sp=[0,500,1000,1500];
     //toggle light
+          for (var j = 0; j < Sp.length; j++) {
     for (var i =0;i< S.length; i++) {
-      for (var j = 0; j < Sp.length; j++) {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(151,700,400,300);
-      stroke(255);
+      stroke(228,185,75,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
       textSize(25);
       stroke(228,185,75);
@@ -787,19 +785,19 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==7){
-    fill(150);
+    fill(230);
     rect(70,650,560,45);
-        fill(255);
+      fill(211,113,87);
     textSize(30);
     textFont(Aller_Bd);
     textAlign(CENTER);
     text('Fruit/Vegetable/Spice Beer sales',350,680);
-        fill(150);
+        fill(230);
     rect(151,700,400,300);
     rect(100,700,40,310);
-    fill(255);
+    fill(100);
         textSize(12);
-    stroke(255);
+    stroke(100);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -822,14 +820,14 @@ function draw() {
     var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
     var Sp=[0,500,1000,1500];
     //toggle fruit
+          for (var j = 0; j < Sp.length; j++) {
     for (var i =0;i< S.length; i++) {
-      for (var j = 0; j < Sp.length; j++) {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(151,700,400,300);
-      stroke(255);
+      stroke(211,113,87,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
       textSize(25);
       stroke(211,113,87);
@@ -852,8 +850,8 @@ function draw() {
 //Production
 // console.log(prod);
   if (state!=0){
-  stroke(255);
-  fill(255);
+  stroke(100);
+  fill(100);
   var ystart= 700;
   var yend= 1000;
   var ytotal= ystart + yend;
@@ -864,10 +862,12 @@ function draw() {
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('Production',850,680);
+      fill(169,134,58);
+  text('Craft Beer Production',850,680);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
+  fill(100);
   strokeWeight(1);  
   //yaxis
   line(xstart,ystart,xstart,yend);
@@ -883,115 +883,78 @@ function draw() {
   noStroke();
   textAlign(CENTER);
   text('Year',850,1050);
-  var Yaxis= [0,100,200];
+  var Yaxis= [0,10,20,30];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
-    text(Yaxis[i],620,yend-(yend-ystart)/3*i)
+    text(Yaxis[i],620,yend-(yend-ystart)/4*i)
   };
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-    stroke(255);
-    fill(255);
-  var M0= ytotal-map(prod[0],0,300000000,ystart,yend);
-  var M1= ytotal-map(prod[1],0,300000000,ystart,yend);
-  var M2= ytotal-map(prod[2],0,300000000,ystart,yend);
-  var M3= ytotal-map(prod[3],0,300000000,ystart,yend);
-  var M4= ytotal-map(prod[4],0,300000000,ystart,yend);
-  var M5= ytotal-map(prod[5],0,300000000,ystart,yend);
-  var M6= ytotal-map(prod[6],0,300000000,ystart,yend);
-  var M7= ytotal-map(prod[7],0,300000000,ystart,yend);
-  var M8= ytotal-map(prod[8],0,300000000,ystart,yend);
-  var M9= ytotal-map(prod[9],0,300000000,ystart,yend);
-  var M10= ytotal-map(prod[10],0,300000000,ystart,yend);
+  var M0= ytotal-map(CP[0],0,40,ystart,yend);
+  var M1= ytotal-map(CP[1],0,40,ystart,yend);
+  var M2= ytotal-map(CP[2],0,40,ystart,yend);
+  var M3= ytotal-map(CP[3],0,40,ystart,yend);
+  var M4= ytotal-map(CP[4],0,40,ystart,yend);
+  var M5= ytotal-map(CP[5],0,40,ystart,yend);
+  var M6= ytotal-map(CP[6],0,40,ystart,yend);
+  var M7= ytotal-map(CP[7],0,40,ystart,yend);
+  var M8= ytotal-map(CP[8],0,40,ystart,yend);
+  var M9= ytotal-map(CP[9],0,40,ystart,yend);
+  var M10= ytotal-map(CP[10],0,40,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
       //toggle production
   for (var i =0;i< M.length; i++) {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1))
       && mouseX<xstart+(xend-xstart)/12*(i+2)){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
+    fill(169,134,58);
       textSize(25);
-      text(malt[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
+      text(CP[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-500)
       && mouseX<xstart+(xend-xstart)/12*(i+2)-500){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
+    fill(169,134,58);
       textSize(25);
-      text(malt[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
+      text(CP[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+500)
       && mouseX<xstart+(xend-xstart)/12*(i+2)+500){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
+    fill(169,134,58);
       textSize(25);
-      text(malt[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
+      text(CP[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+1000)
       && mouseX<xstart+(xend-xstart)/12*(i+2)+1000){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
+    fill(169,134,58);
       textSize(25);
-      text(malt[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
+      text(CP[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     };
   };
   for (var i =0;i< M.length; i++) {
     strokeWeight(2);
+        stroke(169,134,58,100);
+    fill(169,134,58);
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-//craftproduction
-    stroke(0);
-    fill(0);
-  var M0= ytotal-map(CP[0],0,300,ystart,yend);
-  var M1= ytotal-map(CP[1],0,300,ystart,yend);
-  var M2= ytotal-map(CP[2],0,300,ystart,yend);
-  var M3= ytotal-map(CP[3],0,300,ystart,yend);
-  var M4= ytotal-map(CP[4],0,300,ystart,yend);
-  var M5= ytotal-map(CP[5],0,300,ystart,yend);
-  var M6= ytotal-map(CP[6],0,300,ystart,yend);
-  var M7= ytotal-map(CP[7],0,300,ystart,yend);
-  var M8= ytotal-map(CP[8],0,300,ystart,yend);
-  var M9= ytotal-map(CP[9],0,300,ystart,yend);
-  var M10= ytotal-map(CP[10],0,300,ystart,yend);
-  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
-  for (var i =0;i< M.length; i++) {
-    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
-    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
-  };
-// //craftincrease
-//     stroke(255,0,0);
-//     fill(255,0,0);
-//   var M0= ytotal-map(CI[0],0,100,ystart,yend);
-//   var M1= ytotal-map(CI[1],0,100,ystart,yend);
-//   var M2= ytotal-map(CI[2],0,100,ystart,yend);
-//   var M3= ytotal-map(CI[3],0,100,ystart,yend);
-//   var M4= ytotal-map(CI[4],0,100,ystart,yend);
-//   var M5= ytotal-map(CI[5],0,100,ystart,yend);
-//   var M6= ytotal-map(CI[6],0,100,ystart,yend);
-//   var M7= ytotal-map(CI[7],0,100,ystart,yend);
-//   var M8= ytotal-map(CI[8],0,100,ystart,yend);
-//   var M9= ytotal-map(CI[9],0,100,ystart,yend);
-//   var M10= ytotal-map(CI[10],0,100,ystart,yend);
-//   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
-//   for (var i =0;i< M.length; i++) {
-//     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
-//     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
-//   };
+
 };
 
 
@@ -1003,17 +966,19 @@ function draw() {
   var xstart=1150;
   var xend= 1550; 
 //title
-   stroke(255);
-    fill(255);
+   stroke(100);
+    fill(100);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
+      fill(169,134,58);
   text('Malt Consumption',1350,680);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
   strokeWeight(1);  
+  fill(100);
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
@@ -1036,8 +1001,8 @@ function draw() {
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-    stroke(255);
-    fill(255);
+    stroke(100);
+    fill(100);
   var M0= ytotal-map(malt[0],0,6000,ystart,yend);
   var M1= ytotal-map(malt[1],0,6000,ystart,yend);
   var M2= ytotal-map(malt[2],0,6000,ystart,yend);
@@ -1055,47 +1020,49 @@ function draw() {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1))
       && mouseX<xstart+(xend-xstart)/12*(i+2)){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);    
+    fill(169,134,58);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
       textSize(25);
       text(malt[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-500)
       && mouseX<xstart+(xend-xstart)/12*(i+2)-500){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
+        fill(169,134,58);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
       textSize(25);
       text(malt[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-1000)
       && mouseX<xstart+(xend-xstart)/12*(i+2)-1000){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
+        fill(169,134,58);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
       textSize(25);
       text(malt[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+500)
       && mouseX<xstart+(xend-xstart)/12*(i+2)+500){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
+        fill(169,134,58);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
       textSize(25);
       text(malt[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     };
   };
   for (var i =0;i< M.length; i++) {
         strokeWeight(2);
+            stroke(169,134,58,100);
+        fill(169,134,58);
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
@@ -1117,8 +1084,9 @@ function draw() {
   text('Rice Consumption',1850,680);
   //axis
   textSize(12);
-  stroke(255);
-  strokeWeight(1);  
+  stroke(100);
+  strokeWeight(1); 
+  fill(100); 
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
@@ -1141,8 +1109,8 @@ function draw() {
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-    stroke(255);
-    fill(255);
+    stroke(100);
+    fill(100);
   var M0= ytotal-map(rice[0],0,1000,ystart,yend);
   var M1= ytotal-map(rice[1],0,1000,ystart,yend);
   var M2= ytotal-map(rice[2],0,1000,ystart,yend);
@@ -1162,19 +1130,19 @@ function draw() {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)-Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)-Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(2100,600,500,350,20,20,20,20);
       rect(1651,700,400,300);
-      stroke(255);
+    stroke(169,134,58,100);
+        fill(169,134,58);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
       textSize(25);
       text(rice[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     };
     if (mouseX>(xstart+(xend-xstart)/12*8-Sp[j])
       && mouseX<xstart+(xend-xstart)/12*9-Sp[j]){
     noStroke();
-    fill(110,136,152);    
+    fill(134,195,189);    
     rect(1700,900,150,75,10,10,10,10);
     rect(2100,600,500,350,20,20,20,20);
     textSize(50);
@@ -1193,8 +1161,8 @@ function draw() {
   };
   for (var i =0;i< M.length; i++) {
     strokeWeight(2);
-    stroke(255);
-    fill(255);
+    stroke(169,134,58,100);
+        fill(169,134,58);
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
@@ -1208,14 +1176,17 @@ function draw() {
   var xstart=150;
   var xend= 550;  
   //title
+  fill(165,180,64);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
+  noStroke();
   text('Hop Consumption',350,1180);
   //axis
   textSize(12);
-  stroke(255);
-  strokeWeight(1);  
+  stroke(50);
+  strokeWeight(1);
+    fill(50);  
 
   //yaxis
   line(xstart,ystart,xstart,yend);
@@ -1252,50 +1223,24 @@ function draw() {
   var S9= ytotal-map(hop[9],0,endvalue,ystart,yend);
   var S10= ytotal-map(hop[10],0,endvalue,ystart,yend);
   var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
+  var Sp=[0,500,1000,1500];
     //toggle hop consumption
+    for (var j = 0; j < Sp.length; j++) {
   for (var i =0;i< S.length; i++) {
-    if ((xstart+(xend-xstart)/12*(i+1))<mouseX
-      && mouseX<xstart+(xend-xstart)/12*(i+2)){
+    if ((xstart+(xend-xstart)/12*(i+1)+Sp[j])<mouseX
+      && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(151,1200,400,300);
-      stroke(255);
+      stroke(165,180,64,100);
       line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),S[i]);
       textSize(25);
-      fill(255);
-      text(hop[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
-    } else if ((500+xstart+(xend-xstart)/12*(i+1))<mouseX
-      && mouseX<500+xstart+(xend-xstart)/12*(i+2)){
+      fill(165,180,64);
       noStroke();
-      fill(150);
-      rect(151,1200,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),S[i]);
-      textSize(25);
-      fill(255);
       text(hop[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
-    } else if ((1000+xstart+(xend-xstart)/12*(i+1))<mouseX
-      && mouseX<1000+xstart+(xend-xstart)/12*(i+2)){
-      noStroke();
-      fill(150);
-      rect(151,1200,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),S[i]);
-      textSize(25);
-      fill(255);
-      text(hop[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
-    } else if ((1500+xstart+(xend-xstart)/12*(i+1))<mouseX
-      && mouseX<1500+xstart+(xend-xstart)/12*(i+2)){
-      noStroke();
-      fill(150);
-      rect(151,1200,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),S[i]);
-      textSize(25);
-      fill(255);
-      text(hop[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
-    }
+    };
   };
+};
   for (var i =0;i< S.length; i++) {
     stroke(165,180,64);
     fill(165,180,64);
@@ -1309,7 +1254,7 @@ function draw() {
 //hop rate 
 // console.log(HR);
   if (state!=0){
-    fill(255);
+    fill(230);
   var ystart= 1200;
   var yend= 1500;
   var ytotal= ystart + yend;
@@ -1320,11 +1265,13 @@ function draw() {
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('Hop Rate',850,1180);
+  fill(165,180,64);
+  text('Beer Hopping Rate',850,1180);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
   strokeWeight(1);  
+  fill(100);
   //yaxis
   line(xstart,ystart,xstart,yend);
   //xaxis
@@ -1365,42 +1312,42 @@ function draw() {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1))
       && mouseX<xstart+(xend-xstart)/12*(i+2)){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,1200,400,300);
-      stroke(255);
+      stroke(165,180,64,100);
       line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),H[i]);
       textSize(25);
-      fill(255);
+  fill(165,180,64);
       text(HR[i],xstart+(xend-xstart)/12*(i+1),H[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-500)
       && mouseX<xstart+(xend-xstart)/12*(i+2)-500){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,1200,400,300);
-      stroke(255);
+      stroke(165,180,64,100);
       line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),H[i]);
       textSize(25);
-      fill(255);
+  fill(165,180,64);
       text(HR[i],xstart+(xend-xstart)/12*(i+1),H[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+500)
       && mouseX<xstart+(xend-xstart)/12*(i+2)+500){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,1200,400,300);
-      stroke(255);
+      stroke(165,180,64,100);
       line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),H[i]);
       textSize(25);
-      fill(255);
+  fill(165,180,64);
       text(HR[i],xstart+(xend-xstart)/12*(i+1),H[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+1000)
       && mouseX<xstart+(xend-xstart)/12*(i+2)+1000){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,1200,400,300);
-      stroke(255);
+      stroke(165,180,64,100);
       line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),H[i]);
       textSize(25);
-      fill(255);
+  fill(165,180,64);
       text(HR[i],xstart+(xend-xstart)/12*(i+1),H[i]-20);
     };
   };
@@ -1415,13 +1362,14 @@ function draw() {
 
 //hop acreage 
 if (state!=0){
-    fill(255);
+    fill(230);
   var ystart= 1200;
   var yend= 1500;
   var ytotal= ystart + yend;
   var xstart=1150;
   var xend= 1550;
 //title
+  fill(165,180,64);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
@@ -1429,7 +1377,7 @@ if (state!=0){
   text('Hop Acreage',1350,1180);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
   strokeWeight(1);  
   //yaxis
   line(xstart,ystart,xstart,yend);
@@ -1440,11 +1388,13 @@ if (state!=0){
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
+    fill(100);
   text('Acreage',0,0);
   pop();
   noStroke();
   textAlign(CENTER);
   text('Year',1350,1550);
+  fill(100);
   var Yaxis= [0,10000,20000,30000,40000,50000,60000];
   textFont(Aller_Lt);
   for (var i =0; i<Yaxis.length; i++) {
@@ -1473,12 +1423,12 @@ if (state!=0){
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,1200,400,300);
       rect(2100,1100,1000,500);
-      stroke(255);
+      stroke(165,180,64,100);
       line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
+  fill(165,180,64);
       textSize(20);
       text(HA[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*6+Sp[j])
@@ -1493,7 +1443,7 @@ if (state!=0){
     fill(255);
     noStroke();
     textSize(15);
-    text('Demand for Local Hops increase!',1410,1410,140,65);
+    text('Demand for Local Hops increase!',1410,1420,140,65);
     textSize(50);
     textFont(Aller_Bd);
     text('FARM TO BAR',2350,1180);
@@ -1517,7 +1467,7 @@ if (state!=0){
 
   //hop variety 
     if (state!=0){
-      fill(255);
+      fill(230);
   var ystart= 1200;
   var yend= 1500;
   var ytotal= ystart + yend;
@@ -1525,13 +1475,14 @@ if (state!=0){
   var xend= 2050;
   //title
   textSize(30);
+  fill(165,180,64);
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
   text('Hop Variety',1850,1180);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
   strokeWeight(1);  
   //yaxis
   line(xstart,ystart,xstart,yend);
@@ -1542,10 +1493,12 @@ if (state!=0){
   angleMode(DEGREES);
   rotate(-90);
   noStroke();
+  fill(100);
   text('Number',0,0);
   pop();
   noStroke();
   textAlign(CENTER);
+    fill(100);
   text('Year',1850,1550);
   var Yaxis= [0,100,200];
   textFont(Aller_Lt);
@@ -1575,11 +1528,11 @@ if (state!=0){
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)-Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)-Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1651,1200,400,300);
-      stroke(255);
+      stroke(165,180,64,100);
       line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
+  fill(165,180,64);
       textSize(25);
       text(HV[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
           } else if (mouseX>(xstart+(xend-xstart)/12*6-Sp[j])
@@ -1611,7 +1564,7 @@ if (state!=0){
   //no of breweries graph//
   //legend (S,M,L,XL)//
     if (state!=0){
-  fill(255);
+  fill(230);
   // textFont(Aller_Bd);
   // textAlign(LEFT);
   // textSize(15);
@@ -1631,6 +1584,7 @@ if (state!=0){
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
+  fill(100);
   text('No. of S Breweries',350,1670);
       textSize(50);
   textFont(Aller_Lt);
@@ -1638,7 +1592,7 @@ if (state!=0){
   text('<60,000 Barrels',350,1700);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
   strokeWeight(1);  
 
 
@@ -1666,8 +1620,8 @@ if (state!=0){
   };
 
   //plot S//
-  stroke(255);
-  fill(255);
+  stroke(100);
+  fill(100);
   strokeWeight(2);
   var S0= ytotal-map(noS[0],0,7000,ystart,yend);
   var S1= ytotal-map(noS[1],0,7000,ystart,yend);
@@ -1688,18 +1642,18 @@ if (state!=0){
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(2100,1600,1000,650,20,20,20,20);
       rect(151,1700,400,300);
-      stroke(255);
+      stroke(100,100,100,100);
       line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),S[i]);
       textSize(25);
-      fill(255);
+      fill(100);
       text(noS[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
     };
     if (mouseX>(xstart+(xend-xstart)/12*11+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*12+Sp[j]){
-    fill(0);
+    fill(100);
     noStroke();
     rect(400,1900,150,75,10,10,10,10);
     rect(2100,1600,500,350,20,20,20,20);
@@ -1708,7 +1662,7 @@ if (state!=0){
     fill(255);
     noStroke();
     textSize(15);
-    text('Small-scale Breweries increase!',410,1910,140,65);
+    text('Small-scale Breweries increase!',410,1920,140,65);
     textSize(50);
     textFont(Aller_Bd);
     text('SMALL-SCALE WINS',2350,1680);
@@ -1721,9 +1675,9 @@ if (state!=0){
   };
   };
   for (var i =0;i< S.length; i++) {
-    fill(255);
+    fill(100);
     strokeWeight(2);
-    stroke(255);
+    stroke(100);
     line(xstart+(xend-xstart)/12*(i+1),S[i],xstart+(xend-xstart)/12*(i+2),S[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
   };
@@ -1745,7 +1699,7 @@ if (state!=0){
   text('60,000-2M Barrels',850,1700);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
   strokeWeight(1);  
   //yaxis
   line(xstart,ystart,xstart,yend);
@@ -1769,7 +1723,7 @@ if (state!=0){
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-    stroke(255);
+    stroke(100);
   var M0= ytotal-map(noM[0],0,200,ystart,yend);
   var M1= ytotal-map(noM[1],0,200,ystart,yend);
   var M2= ytotal-map(noM[2],0,200,ystart,yend);
@@ -1789,24 +1743,24 @@ if (state!=0){
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(651,1700,400,300);
-      stroke(255);
+      stroke(100,100,100,100);
       line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),M[i]);
       textSize(25);
-      fill(255);
+      fill(100);
       text(noM[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     };
       if (mouseX>(xstart+(xend-xstart)/12*4+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*5+Sp[j]){
-    fill(110,136,152);
+      fill(134,195,189);    
     noStroke();
     rect(800,1750,150,75,10,10,10,10);
     rect(2100,1600,500,350,20,20,20,20);
     fill(255);
     noStroke();
     textSize(15);
-    text('M Breweries increase!',810,1760,140,65);
+    text('M Breweries increase!',810,1770,140,65);
     textSize(50);
     textFont(Aller_Bd);
     text('Craft Beer Grows',2350,1680);
@@ -1817,9 +1771,9 @@ if (state!=0){
     };
   };
   for (var i =0;i< M.length; i++) {
-    fill(255);
+    fill(100);
     strokeWeight(2);
-    stroke(255);
+    stroke(100);
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
@@ -1845,6 +1799,7 @@ if (state!=0){
   strokeWeight(1);  
 
     //yaxis
+    stroke(100);
   line(xstart,ystart,xstart,yend);
   //xaxis
   line(xstart,yend,xend,yend);
@@ -1866,7 +1821,7 @@ if (state!=0){
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-    stroke(255);
+    stroke(100);
   var L0= ytotal-map(noL[0],0,200,ystart,yend);
   var L1= ytotal-map(noL[1],0,200,ystart,yend);
   var L2= ytotal-map(noL[2],0,200,ystart,yend);
@@ -1884,47 +1839,47 @@ if (state!=0){
     if (mouseX>(xstart+(xend-xstart)/12*(i+1))
       && mouseX<xstart+(xend-xstart)/12*(i+2)){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,1700,400,300);
-      stroke(255);
+      stroke(100,100,100,100);
       line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),L[i]);
       textSize(25);
-      fill(255);
+      fill(100);
       text(noL[i],xstart+(xend-xstart)/12*(i+1),L[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-500)
       && mouseX<xstart+(xend-xstart)/12*(i+2)-500){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,1700,400,300);
-      stroke(255);
+      stroke(100,100,100,100);
       line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),L[i]);
       textSize(25);
-      fill(255);
+      fill(100);
       text(noL[i],xstart+(xend-xstart)/12*(i+1),L[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-1000)
       && mouseX<xstart+(xend-xstart)/12*(i+2)-1000){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,1700,400,300);
-      stroke(255);
+      stroke(100,100,100,100);
       line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),L[i]);
       textSize(25);
-      fill(255);
+      fill(100);
       text(noL[i],xstart+(xend-xstart)/12*(i+1),L[i]-20);
     } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+500)
       && mouseX<xstart+(xend-xstart)/12*(i+2)+500){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1151,1700,400,300);
-      stroke(255);
+      stroke(100,100,100,100);
       line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),L[i]);
       textSize(25);
-      fill(255);
+      fill(100);
       text(noL[i],xstart+(xend-xstart)/12*(i+1),L[i]-20);
     };
   };
   for (var i =0;i< L.length; i++) {
-    fill(255);
+    fill(100);
     strokeWeight(2);
     line(xstart+(xend-xstart)/12*(i+1),L[i],xstart+(xend-xstart)/12*(i+2),L[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),L[i],5,5);
@@ -1946,7 +1901,7 @@ if (state!=0){
   text('>6M Barrels',1850,1700);
   //axis
   textSize(12);
-  stroke(255);
+  stroke(100);
   strokeWeight(1);  
 
     //yaxis
@@ -1971,7 +1926,7 @@ if (state!=0){
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-  stroke(255);
+  stroke(100);
   var XL0= ytotal-map(noXL[0],0,200,ystart,yend);
   var XL1= ytotal-map(noXL[1],0,200,ystart,yend);
   var XL2= ytotal-map(noXL[2],0,200,ystart,yend);
@@ -1991,11 +1946,11 @@ if (state!=0){
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)-Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)-Sp[j]){
       noStroke();
-      fill(150);
+      fill(230);
       rect(1651,1700,400,300);
-      stroke(255);
+      stroke(100);
       line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),XL[i]);
-      fill(255);
+      fill(100);
       textSize(25);
       text(noXL[i],xstart+(xend-xstart)/12*(i+1),XL[i]-20);
     };
@@ -2052,10 +2007,9 @@ function mousePressed() {
 
 
 function draw2010(){
-      fill(150);
+      fill(230);
       rect(1400,100,2000,500);
-      var craftfill= color(110,136,152);
-      fill(craftfill);    
+      fill(134,195,189);    
       rect(1300+1500/12*4-200,250,400,250,20,20,20,20);
       triangle(1300+1500/12*4,220,1300+1500/12*4-20,250,1300+1500/12*4+20,250);
       fill(255);
@@ -2069,7 +2023,7 @@ function draw2010(){
 }
 
 function draw2012(){
-        fill(150);
+        fill(230);
       rect(1400,100,2000,500);
           var policyfill= color(165,180,64);    
       fill(policyfill);   
@@ -2087,10 +2041,9 @@ function draw2012(){
 
 
 function draw2014(){
-      fill(150);
+      fill(230);
       rect(1400,100,2000,500);
-      var craftfill= color(110,136,152);
-      fill(craftfill);    
+      fill(134,195,189);    
       rect(1300+1500/12*8-200,250,400,250,20,20,20,20);
       triangle(1300+1500/12*8,220,1300+1500/12*8-20,250,1300+1500/12*8+20,250);
       fill(255);
@@ -2103,9 +2056,9 @@ function draw2014(){
 }
 
 function draw2017(){
-      fill(150);
+      fill(230);
       rect(1400,100,2000,500);
-      fill(0);
+      fill(100);
       rect(1300+1500/12*11-200,250,400,250,20,20,20,20);
       triangle(1300+1500/12*11,120,1300+1500/12*11-20,250,1300+1500/12*11+20,250);
       fill(255);
