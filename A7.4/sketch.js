@@ -1,6 +1,6 @@
 var state = 0;
 var Width= 3000;
-var Height = 2500;
+var Height = 2200;
 
 function preload() {
   Aller_Lt = loadFont('Aller_Lt.ttf');
@@ -134,7 +134,6 @@ function draw() {
   var malthop = 'Malt Level\n\nHop Level'
   //ipa
   if (state == 1){
-
     fill(200);
     noStroke();
     rect(520,50,700,500,50,50,50,50);
@@ -291,16 +290,118 @@ function draw() {
   var Light = table.getColumn("light");
   var Fruit = table.getColumn("fruit");
 
+  if (state!=0){
+    fill(255);
+    textAlign(CENTER);
+   for (var k =0; k<year.length; k++) {
+      text(year[k],1300+1500/12*(k+1),80);
+     };
+    var policyfill= color(165,180,64);    
+    var craftfill= color(110,136,152);
+    var Spt= [0,500,1000,1500];
+    var xstart=150;
+    var xend= 550;
+
+
+    //toggle 2017
+    if (2645<mouseX
+      && mouseY< 750){
+      draw2017();
+      };
+        for (var j = 0; j < Spt.length; j++) {
+      if (mouseX>(xstart+(xend-xstart)/12*11+Spt[j])
+        && mouseX<xstart+(xend-xstart)+Spt[j]){
+        draw2017();
+    };
+  };
+
+    //toggle 2012
+    for (var j = 0; j < Spt.length; j++) {
+      if (mouseX>(xstart+(xend-xstart)/12*6+Spt[j])
+        && mouseX<xstart+(xend-xstart)/12*7+Spt[j]){
+      draw2012();
+  };
+  };
+    if (2020<mouseX
+      && mouseX<2080
+      && mouseY<750){
+      draw2012();
+  };
+
+    //toggle 2010
+        for (var j = 0; j < Spt.length; j++) {
+      if (mouseX>(xstart+(xend-xstart)/12*4+Spt[j])
+        && mouseX<xstart+(xend-xstart)/12*5+Spt[j]){
+        draw2010();
+      };
+  };
+    if (1770<mouseX
+      && mouseX<1830
+      && mouseY<750){
+      draw2010();
+    };
+
+    //toggle 2014
+          for (var j = 0; j < Spt.length; j++) {
+      if (mouseX>(xstart+(xend-xstart)/12*8+Spt[j])
+        && mouseX<xstart+(xend-xstart)/12*9+Spt[j]){
+        draw2014();
+  };
+};
+    if (2270<mouseX
+      && mouseX<2330
+      && mouseY<750){
+     draw2014();
+   };
+    //toggle none
+    var None = [1,2,3,5,7,9,10];
+    for (var i = 0; i < None.length; i++) {
+      for (var j = 0; j < Spt.length; j++) {
+        if (mouseX>(xstart+(xend-xstart)/12*None[i]+Spt[j])
+          && mouseX<xstart+(xend-xstart)/12*(None[i]+1)+Spt[j]){
+            fill(150);
+            rect(1400,100,2000,500);
+        };
+      };
+    };
+
+
+   //tax 2017
+   fill(0);
+   textSize(30);
+   text('Tax',1300,110);   
+   rect(1400,100,1300,20);
+   triangle(2700,100,2700,120,2750,110);
+   fill(255);
+   ellipse(1300+1500/12*11,110,20,20);
+   fill(0);
+
+    //policy 
+
+    fill(policyfill);    
+    text('Policy',1300,160);   
+    rect(1400,150,1300,20);
+    triangle(2700,150,2700,170,2750,160);
+    fill(255);
+    ellipse(1300+1500/12*6,160,20,20);
+    //craft definition
+    fill(craftfill);    
+    text('Craft \ndefinition',1300,220);   
+    rect(1400,200,1300,20);
+    triangle(2700,200,2700,220,2750,210);
+    fill(255);
+    ellipse(1300+1500/12*4,210,20,20);
+    ellipse(1300+1500/12*8,210,20,20);
+  };
+
 
 //beer sales
   //title
   if (state!=0){
+  fill(255);
   textSize(30);
   textFont(Aller_Bd);
   textAlign(CENTER);
-  text('Beer sales',350,680);
-  textSize(50);
-  text('CRAFT DOMINATES',2350,680);
   //axis
   textSize(12);
   stroke(255);
@@ -331,10 +432,20 @@ function draw() {
 
   if (state ==1){
     fill(150);
+    rect(70,650,560,45);
+    fill(255);
+    textSize(30);
+    textFont(Aller_Bd);
+    textAlign(CENTER);
+    text('IPA sales',350,680);
+    textSize(12);
+    fill(150);
     rect(151,700,400,300);
     rect(100,700,40,310);
     fill(255);
     strokeWeight(1);
+    textSize(12);
+    stroke(255);
     var Yaxis= [0,200,400,600];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -360,19 +471,19 @@ function draw() {
     //toggle IPA
     for (var i =0;i< S.length; i++) {
       for (var j = 0; j < Sp.length; j++) {
-    if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
-      && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
-      noStroke();
-      fill(150);
-      rect(151,700,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
-      textSize(25);
-      stroke(151,99,46);
-      fill(151,99,46);
-      text(Ipa[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
+        if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
+        && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
+        noStroke();
+        fill(150);
+        rect(151,700,400,300);
+        stroke(255);
+        line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
+        textSize(25);
+        stroke(151,99,46);
+        fill(151,99,46);
+        text(Ipa[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
+       };
     };
-          };
   };
     for (var i =0;i< S.length; i++) {
       stroke(151,99,46);
@@ -381,10 +492,19 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==2){
+        fill(150);
+    rect(70,650,560,45);
+        fill(255);
+    textSize(30);
+    textFont(Aller_Bd);
+    textAlign(CENTER);
+    text('Pale Ale sales',350,680);
     fill(150);
     rect(151,700,400,300);
     rect(100,700,40,310);
     fill(255);
+        textSize(12);
+    stroke(255);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -412,6 +532,7 @@ function draw() {
     if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
       && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       fill(150);
+    noStroke();
       rect(151,700,400,300);
       stroke(255);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),S[i]);
@@ -431,9 +552,18 @@ function draw() {
     };
   } else if (state ==3){
         fill(150);
+    rect(70,650,560,45);
+        fill(255);
+    textSize(30);
+    textFont(Aller_Bd);
+    textAlign(CENTER);
+    text('Amber sales',350,680);
+        fill(150);
     rect(151,700,400,300);
     rect(100,700,40,310);
     fill(255);
+        textSize(12);
+    stroke(255);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -482,9 +612,18 @@ function draw() {
     };
   } else if (state ==4){
         fill(150);
+    rect(70,650,560,45);
+        fill(255);
+    textSize(30);
+    textFont(Aller_Bd);
+    textAlign(CENTER);
+    text('Stout sales',350,680);
+        fill(150);
     rect(151,700,400,300);
     rect(100,700,40,310);
     fill(255);
+        textSize(12);
+    stroke(255);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -532,9 +671,18 @@ function draw() {
     };
   } else if (state ==5){
         fill(150);
+    rect(70,650,560,45);
+        fill(255);
+    textSize(30);
+    textFont(Aller_Bd);
+    textAlign(CENTER);
+    text('Pilsner sales',350,680);
+        fill(150);
     rect(151,700,400,300);
     rect(100,700,40,310);
     fill(255);
+        textSize(12);
+    stroke(255);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -582,9 +730,18 @@ function draw() {
     };
   } else if (state ==6){
         fill(150);
+    rect(70,650,560,45);
+        fill(255);
+    textSize(30);
+    textFont(Aller_Bd);
+    textAlign(CENTER);
+    text('Light sales',350,680);
+        fill(150);
     rect(151,700,400,300);
     rect(100,700,40,310);
     fill(255);
+        textSize(12);
+    stroke(255);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -630,10 +787,19 @@ function draw() {
       ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
     };
   } else if (state ==7){
+    fill(150);
+    rect(70,650,560,45);
+        fill(255);
+    textSize(30);
+    textFont(Aller_Bd);
+    textAlign(CENTER);
+    text('Fruit/Vegetable/Spice Beer sales',350,680);
         fill(150);
     rect(151,700,400,300);
     rect(100,700,40,310);
     fill(255);
+        textSize(12);
+    stroke(255);
     var Yaxis= [0,40,80,120,160];
     textFont(Aller_Lt);
     for (var i =0; i<Yaxis.length; i++) {
@@ -807,25 +973,25 @@ function draw() {
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
-//craftincrease
-    stroke(255,0,0);
-    fill(255,0,0);
-  var M0= ytotal-map(CI[0],0,100,ystart,yend);
-  var M1= ytotal-map(CI[1],0,100,ystart,yend);
-  var M2= ytotal-map(CI[2],0,100,ystart,yend);
-  var M3= ytotal-map(CI[3],0,100,ystart,yend);
-  var M4= ytotal-map(CI[4],0,100,ystart,yend);
-  var M5= ytotal-map(CI[5],0,100,ystart,yend);
-  var M6= ytotal-map(CI[6],0,100,ystart,yend);
-  var M7= ytotal-map(CI[7],0,100,ystart,yend);
-  var M8= ytotal-map(CI[8],0,100,ystart,yend);
-  var M9= ytotal-map(CI[9],0,100,ystart,yend);
-  var M10= ytotal-map(CI[10],0,100,ystart,yend);
-  var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
-  for (var i =0;i< M.length; i++) {
-    line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
-    ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
-  };
+// //craftincrease
+//     stroke(255,0,0);
+//     fill(255,0,0);
+//   var M0= ytotal-map(CI[0],0,100,ystart,yend);
+//   var M1= ytotal-map(CI[1],0,100,ystart,yend);
+//   var M2= ytotal-map(CI[2],0,100,ystart,yend);
+//   var M3= ytotal-map(CI[3],0,100,ystart,yend);
+//   var M4= ytotal-map(CI[4],0,100,ystart,yend);
+//   var M5= ytotal-map(CI[5],0,100,ystart,yend);
+//   var M6= ytotal-map(CI[6],0,100,ystart,yend);
+//   var M7= ytotal-map(CI[7],0,100,ystart,yend);
+//   var M8= ytotal-map(CI[8],0,100,ystart,yend);
+//   var M9= ytotal-map(CI[9],0,100,ystart,yend);
+//   var M10= ytotal-map(CI[10],0,100,ystart,yend);
+//   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+//   for (var i =0;i< M.length; i++) {
+//     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
+//     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
+//   };
 };
 
 
@@ -997,6 +1163,7 @@ function draw() {
       && mouseX<xstart+(xend-xstart)/12*(i+2)-Sp[j]){
       noStroke();
       fill(150);
+      rect(2100,600,500,350,20,20,20,20);
       rect(1651,700,400,300);
       stroke(255);
       line(xstart+(xend-xstart)/12*(i+1),1000,xstart+(xend-xstart)/12*(i+1),M[i]);
@@ -1004,9 +1171,30 @@ function draw() {
       textSize(25);
       text(rice[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     };
-        };
+    if (mouseX>(xstart+(xend-xstart)/12*8-Sp[j])
+      && mouseX<xstart+(xend-xstart)/12*9-Sp[j]){
+    noStroke();
+    fill(110,136,152);    
+    rect(1700,900,150,75,10,10,10,10);
+    rect(2100,600,500,350,20,20,20,20);
+    textSize(50);
+    textFont(Aller_Bd);
+    fill(255);
+    text('IPA DOMINATES',2350,680);
+    fill(255);
+    textFont(Aller_Lt);
+    textSize(30);
+    text("Despite change in craft beer ingredient requirement, malt is not substituted by rice due to the domination of hoppy beers.", 2130,730, 430,350);
+    noStroke();
+    textSize(15);
+    text('Rice consumption continue to decrease',1700,910,140,65);
+    };
+  };
   };
   for (var i =0;i< M.length; i++) {
+    strokeWeight(2);
+    stroke(255);
+    fill(255);
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
@@ -1159,7 +1347,7 @@ function draw() {
   for (var i =0; i<year.length; i++) {
     text(year[i],(xstart+(xend-xstart)/12*(i+1)),yend+20)
   };
-  console.log(HR);  
+  // console.log(HR);  
   var HR0= ytotal-map(HR[0],0,2,ystart,yend);
   var HR1= ytotal-map(HR[1],0,2,ystart,yend);
   var HR2= ytotal-map(HR[2],0,2,ystart,yend);
@@ -1226,7 +1414,7 @@ function draw() {
 
 
 //hop acreage 
-  if (state!=0){
+if (state!=0){
     fill(255);
   var ystart= 1200;
   var yend= 1500;
@@ -1278,49 +1466,43 @@ function draw() {
   var M9= ytotal-map(HA[9],0,70000,ystart,yend);
   var M10= ytotal-map(HA[10],0,70000,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+    var Sp= [-1000,-500,0,500];
   //toggle hop acreage
   for (var i =0;i< S.length; i++) {
-    if (mouseX>(xstart+(xend-xstart)/12*(i+1))
-      && mouseX<xstart+(xend-xstart)/12*(i+2)){
+    for (var j = 0; j < Sp.length; j++) {
+    if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
+      && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
       fill(150);
       rect(1151,1200,400,300);
+      rect(2100,1100,1000,500);
       stroke(255);
       line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),M[i]);
       fill(255);
-      textSize(25);
+      textSize(20);
       text(HA[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
-    } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-500)
-      && mouseX<xstart+(xend-xstart)/12*(i+2)-500){
-      noStroke();
-      fill(150);
-      rect(1151,1200,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
-      textSize(25);
-      text(HA[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
-    } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-1000)
-      && mouseX<xstart+(xend-xstart)/12*(i+2)-1000){
-      noStroke();
-      fill(150);
-      rect(1151,1200,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
-      textSize(25);
-      text(HA[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
-    } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+500)
-      && mouseX<xstart+(xend-xstart)/12*(i+2)+500){
-      noStroke();
-      fill(150);
-      rect(1151,1200,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),1500,xstart+(xend-xstart)/12*(i+1),M[i]);
-      fill(255);
-      textSize(25);
-      text(HA[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
-    };
+    } else if (mouseX>(xstart+(xend-xstart)/12*6+Sp[j])
+      && mouseX<xstart+(xend-xstart)/12*7+Sp[j]){
+    fill(165,180,64);
+    noStroke();
+    rect(1400,1400,150,75,10,10,10,10);
+    rect(2100,1100,500,350,20,20,20,20);
+    stroke(255,0,0);
+    strokeWeight(1);
+    line(1350,1330,1500,1230);
+    fill(255);
+    noStroke();
+    textSize(15);
+    text('Demand for Local Hops increase!',1410,1410,140,65);
+    textSize(50);
+    textFont(Aller_Bd);
+    text('FARM TO BAR',2350,1180);
+    textFont(Aller_Lt);
+    textSize(30);
+    text("Due to popularity of craft beer, breweries began to set up their own hop farms to promote 'Farm to Bar' experience", 2130,1230, 430,350);
+
+  };
+  };
   };
   stroke(165,180,64);
     fill(165,180,64);
@@ -1330,6 +1512,8 @@ function draw() {
     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
 };
+
+
 
   //hop variety 
     if (state!=0){
@@ -1345,9 +1529,6 @@ function draw() {
   textAlign(CENTER);
   noStroke();
   text('Hop Variety',1850,1180);
-    textSize(50);
-  text('FARM TO BAR',2350,1180);
-
   //axis
   textSize(12);
   stroke(255);
@@ -1401,6 +1582,18 @@ function draw() {
       fill(255);
       textSize(25);
       text(HV[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
+          } else if (mouseX>(xstart+(xend-xstart)/12*6-Sp[j])
+      && mouseX<xstart+(xend-xstart)/12*7-Sp[j]){
+    fill(165,180,64);
+    noStroke();
+    rect(1900,1400,150,75,10,10,10,10);
+    stroke(255,0,0);
+    strokeWeight(1);
+    line(1850,1330,2000,1230);
+    fill(255);
+    noStroke();
+    textSize(15);
+    text('Farmers competition leads to more hop varieties!',1910,1410,140,65);
     };
    };
   };
@@ -1419,14 +1612,14 @@ function draw() {
   //legend (S,M,L,XL)//
     if (state!=0){
   fill(255);
-  textFont(Aller_Bd);
-  textAlign(LEFT);
-  textSize(15);
-  noStroke();
-  text('Size of Breweries',90,2120);
-  textFont(Aller_Lt);
-  text('XL: >6M Barrels\nL: 2M - 6M Barrels\nM: 60,000-2M Barrels\nS: <60,000 Barrels',90,2150);
-  textSize(20);
+  // textFont(Aller_Bd);
+  // textAlign(LEFT);
+  // textSize(15);
+  // noStroke();
+  // text('Size of Breweries',90,2120);
+  // textFont(Aller_Lt);
+  // text('XL: >6M Barrels\nL: 2M - 6M Barrels\nM: 60,000-2M Barrels\nS: <60,000 Barrels',90,2150);
+  // textSize(20);
   // console.log(year);
   var ystart= 1700;
   var yend= 2000;
@@ -1438,10 +1631,11 @@ function draw() {
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of S Breweries',350,1680);
+  text('No. of S Breweries',350,1670);
       textSize(50);
-  text('SMALL-SCALE WINS',2350,1680);
-  image(s,2650,1580,300,500);
+  textFont(Aller_Lt);
+  textSize(20);
+  text('<60,000 Barrels',350,1700);
   //axis
   textSize(12);
   stroke(255);
@@ -1487,42 +1681,15 @@ function draw() {
   var S9= ytotal-map(noS[9],0,7000,ystart,yend);
   var S10= ytotal-map(noS[10],0,7000,ystart,yend);
   var S = [S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10];
+  var Sp= [0,500,1000,1500];
   //toggleS
+  for (var j = 0; j < Sp.length; j++) {
   for (var i =0;i< S.length; i++) {
-    if (mouseX>(xstart+(xend-xstart)/12*(i+1))
-      && mouseX<xstart+(xend-xstart)/12*(i+2)){
+    if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
+      && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
       fill(150);
-      rect(151,1700,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),S[i]);
-      textSize(25);
-      fill(255);
-      text(noS[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
-    } else if (mouseX>500+(xstart+(xend-xstart)/12*(i+1))
-      && mouseX<xstart+500+(xend-xstart)/12*(i+2)){
-      noStroke();
-      fill(150);
-      rect(151,1700,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),S[i]);
-      textSize(25);
-      fill(255);
-      text(noS[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
-    } else if (mouseX>1000+(xstart+(xend-xstart)/12*(i+1))
-      && mouseX<xstart+1000+(xend-xstart)/12*(i+2)){
-      noStroke();
-      fill(150);
-      rect(151,1700,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),S[i]);
-      textSize(25);
-      fill(255);
-      text(noS[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
-    } else if (mouseX>1500+(xstart+(xend-xstart)/12*(i+1))
-      && mouseX<1500+xstart+(xend-xstart)/12*(i+2)){
-      noStroke();
-      fill(150);
+      rect(2100,1600,1000,650,20,20,20,20);
       rect(151,1700,400,300);
       stroke(255);
       line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),S[i]);
@@ -1530,9 +1697,33 @@ function draw() {
       fill(255);
       text(noS[i],xstart+(xend-xstart)/12*(i+1),S[i]-20);
     };
+    if (mouseX>(xstart+(xend-xstart)/12*11+Sp[j])
+      && mouseX<xstart+(xend-xstart)/12*12+Sp[j]){
+    fill(0);
+    noStroke();
+    rect(400,1900,150,75,10,10,10,10);
+    rect(2100,1600,500,350,20,20,20,20);
+    rect(2100,2000,500,100,20,20,20,20);
+    triangle(2680,2000,2500,2000,2400,2100);
+    fill(255);
+    noStroke();
+    textSize(15);
+    text('Small-scale Breweries increase!',410,1910,140,65);
+    textSize(50);
+    textFont(Aller_Bd);
+    text('SMALL-SCALE WINS',2350,1680);
+    textFont(Aller_Lt);
+    textSize(30);
+    text("Tax reduction on small-scale breweries favors the growth of craft beer market and small brewers.", 2130,1730, 430,350);
+    image(s,2650,1580,300,500);
+    text('In 2017, the Brewers Association issued a seal for consumers to distinguish craft beer.',2100,2015,500,100);
+  };
+  };
   };
   for (var i =0;i< S.length; i++) {
     fill(255);
+    strokeWeight(2);
+    stroke(255);
     line(xstart+(xend-xstart)/12*(i+1),S[i],xstart+(xend-xstart)/12*(i+2),S[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),S[i],5,5);
   };
@@ -1548,7 +1739,10 @@ function draw() {
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of M Breweries',850,1680);
+  text('No. of M Breweries',850,1670);
+  textFont(Aller_Lt);
+  textSize(20);
+  text('60,000-2M Barrels',850,1700);
   //axis
   textSize(12);
   stroke(255);
@@ -1588,40 +1782,12 @@ function draw() {
   var M9= ytotal-map(noM[9],0,200,ystart,yend);
   var M10= ytotal-map(noM[10],0,200,ystart,yend);
   var M = [M0,M1,M2,M3,M4,M5,M6,M7,M8,M9,M10];
+  var Sp=[0,-500,500,1000];
     //toggleM
+  for (var j = 0; j < Sp.length; j++) {
   for (var i =0;i< S.length; i++) {
-    if (mouseX>(xstart+(xend-xstart)/12*(i+1))
-      && mouseX<xstart+(xend-xstart)/12*(i+2)){
-      noStroke();
-      fill(150);
-      rect(651,1700,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      textSize(25);
-      fill(255);
-      text(noM[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
-    } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)-500)
-      && mouseX<xstart+(xend-xstart)/12*(i+2)-500){
-      noStroke();
-      fill(150);
-      rect(651,1700,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      textSize(25);
-      fill(255);
-      text(noM[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
-    } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+500)
-      && mouseX<xstart+(xend-xstart)/12*(i+2)+500){
-      noStroke();
-      fill(150);
-      rect(651,1700,400,300);
-      stroke(255);
-      line(xstart+(xend-xstart)/12*(i+1),2000,xstart+(xend-xstart)/12*(i+1),M[i]);
-      textSize(25);
-      fill(255);
-      text(noM[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
-    } else if (mouseX>(xstart+(xend-xstart)/12*(i+1)+1000)
-      && mouseX<xstart+(xend-xstart)/12*(i+2)+1000){
+    if (mouseX>(xstart+(xend-xstart)/12*(i+1)+Sp[j])
+      && mouseX<xstart+(xend-xstart)/12*(i+2)+Sp[j]){
       noStroke();
       fill(150);
       rect(651,1700,400,300);
@@ -1631,9 +1797,29 @@ function draw() {
       fill(255);
       text(noM[i],xstart+(xend-xstart)/12*(i+1),M[i]-20);
     };
+      if (mouseX>(xstart+(xend-xstart)/12*4+Sp[j])
+      && mouseX<xstart+(xend-xstart)/12*5+Sp[j]){
+    fill(110,136,152);
+    noStroke();
+    rect(800,1750,150,75,10,10,10,10);
+    rect(2100,1600,500,350,20,20,20,20);
+    fill(255);
+    noStroke();
+    textSize(15);
+    text('M Breweries increase!',810,1760,140,65);
+    textSize(50);
+    textFont(Aller_Bd);
+    text('Craft Beer Grows',2350,1680);
+    textFont(Aller_Lt);
+    textSize(30);
+    text("Increased production ceiling favors the expansion of craft beer production.", 2130,1730, 430,350);
+  };
+    };
   };
   for (var i =0;i< M.length; i++) {
     fill(255);
+    strokeWeight(2);
+    stroke(255);
     line(xstart+(xend-xstart)/12*(i+1),M[i],xstart+(xend-xstart)/12*(i+2),M[i+1]);
     ellipse(xstart+(xend-xstart)/12*(i+1),M[i],5,5);
   };
@@ -1649,7 +1835,10 @@ function draw() {
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of L Breweries',1350,1680);
+  text('No. of L Breweries',1350,1670);
+  textFont(Aller_Lt);
+  textSize(20);
+  text('2M - 6M Barrels',1350,1700);
   //axis
   textSize(12);
   stroke(255);
@@ -1751,7 +1940,10 @@ function draw() {
   textFont(Aller_Bd);
   textAlign(CENTER);
   noStroke();
-  text('No. of XL Breweries',1850,1680);
+  text('No. of XL Breweries',1850,1670);
+    textFont(Aller_Lt);
+  textSize(20);
+  text('>6M Barrels',1850,1700);
   //axis
   textSize(12);
   stroke(255);
@@ -1859,3 +2051,68 @@ function mousePressed() {
 }
 
 
+function draw2010(){
+      fill(150);
+      rect(1400,100,2000,500);
+      var craftfill= color(110,136,152);
+      fill(craftfill);    
+      rect(1300+1500/12*4-200,250,400,250,20,20,20,20);
+      triangle(1300+1500/12*4,220,1300+1500/12*4-20,250,1300+1500/12*4+20,250);
+      fill(255);
+      textSize(22);
+      textFont(Aller_Bd);
+      text('Cap raised from 2M to 6M Barrels', 1300+1500/12*4-180,270,360,200);
+      textSize(20);
+      textFont(Aller_Lt);
+      text("\n\n The Brewer's Association altered the requirement as an admitted favor to the Boston Beer Company, maker of Sam Adams (US's largest craft beer brewery),who approached the annual cap of 2M barrels.",1300+1500/12*4-180,270,360,200);
+    
+}
+
+function draw2012(){
+        fill(150);
+      rect(1400,100,2000,500);
+          var policyfill= color(165,180,64);    
+      fill(policyfill);   
+      rect(1300+1500/12*6-200,250,400,250,20,20,20,20);
+      triangle(1300+1500/12*6,170,1300+1500/12*6-20,250,1300+1500/12*6+20,250);
+      fill(255);
+      textSize(30);
+      textFont(Aller_Bd);
+      text('Farm Brewing Law', 1300+1500/12*6-180,270,360,200);
+      textSize(20);
+      textFont(Aller_Lt);
+      text('\n\n The farm Brewing Law was passed by Governor Andrew Cuomo. It was designed to increase demand for locally grown products and create new businesses surrounding the brewing industry.', 1300+1500/12*6-180,270,360,200);
+    
+}
+
+
+function draw2014(){
+      fill(150);
+      rect(1400,100,2000,500);
+      var craftfill= color(110,136,152);
+      fill(craftfill);    
+      rect(1300+1500/12*8-200,250,400,250,20,20,20,20);
+      triangle(1300+1500/12*8,220,1300+1500/12*8-20,250,1300+1500/12*8+20,250);
+      fill(255);
+      textSize(30);
+      textFont(Aller_Bd);
+      text('Ingredient Requirement', 1300+1500/12*8-180,270,360,200);
+      textSize(20);
+      textFont(Aller_Lt);
+      text('\n\n The Brewers Association removed a long-standing requirement that a craft brewery must make at least half of its product, as well as its “flagship” beer, from only barley malt - not from rice or corn.', 1300+1500/12*8-180,270,360,200);
+}
+
+function draw2017(){
+      fill(150);
+      rect(1400,100,2000,500);
+      fill(0);
+      rect(1300+1500/12*11-200,250,400,250,20,20,20,20);
+      triangle(1300+1500/12*11,120,1300+1500/12*11-20,250,1300+1500/12*11+20,250);
+      fill(255);
+      textSize(30);
+      textFont(Aller_Bd);
+      text('Tax Reduction',1300+1500/12*11-180,270,360,180);
+      textSize(20);
+      textFont(Aller_Lt);
+      text('\n\nFirst 60,000 Barrels \nreduced from $7 to $3.5\n\n Over 60,000 to 6M Barrels \nreduced from $18 to $16',1300+1500/12*11-180,270,360,180);
+}
