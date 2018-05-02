@@ -1,22 +1,42 @@
-head {
-	background: #FFFFFF;
-    padding: 50pt 200pt;
-}
 
+}
 body {
 	background: white;
-    font-family: Helvetica;
-    font-size: 14;
+    font-family: Aller Light;
+    font-size: 60;
 }
 
+
+
 h3 {
-	background-color: #ccc;
-    margin: 10px;
-    padding: 10px;
+	background-color: white;
+    font-family: Aller ;
+    margin:15px 300px 30px 500px;
+    font-size: 60;
 }
 
 p {
 	color: black;
     text-align: left;
-    margin:15px 150px 10px 150px;
+    margin:15px 300px 30px 500px;
+    font-size: 50;
+        font-family: Aller Light;
+}
+
+
+
+h2 {
+    color: black;
+    text-align: left;
+    margin:0px 300px 0px 500px;
+    font-size: 50;
+        font-family: Aller;
+}
+
+
+h1 {
+    background-color: white;
+    font-family: Aller ;
+    margin:15px 300px 30px 500px;
+    font-size: 80;
 }
